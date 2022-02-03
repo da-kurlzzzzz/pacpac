@@ -59,6 +59,8 @@ noto-fonts-cjk # ^
 noto-fonts-emoji # ^
 noto-fonts-extra # ^
 ttf-dejavu
+ttf-opensans
+ttf-ubuntu-font-family
 unicode-emoji
 
 # what would i do without archiving tools
@@ -78,6 +80,7 @@ python
 logisim # aur
 gnuplot
 wget
+curl
 jq
 pacman-contrib
 reflector
@@ -141,6 +144,7 @@ gvfs-mtp # ^
 # some programs for images
 feh
 gimp
+imagemagick
 img2pdf
 gnome-screenshot
 tesseract
