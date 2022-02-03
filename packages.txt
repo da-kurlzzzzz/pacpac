@@ -84,6 +84,7 @@ curl
 jq
 pacman-contrib
 reflector
+md2pdf
 
 # helps with all that
 ranger
