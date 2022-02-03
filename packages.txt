@@ -1,0 +1,187 @@
+# according to installation guide
+base
+linux
+linux-firmware
+
+# duh
+intel-ucode
+grub # config
+efibootmgr
+
+# for hardware
+networkmanager # systemctl NetworkManager
+iw # config manual
+iwd # systemctl iwd ^
+ntfs-3g
+
+# my own hardware
+blueberry # systemctl bluetooth
+cups # systemctl cups
+avahi # systemctl avahi-daemon ^
+system-config-printer # config manual ^
+numlockx
+
+# basic development
+git
+base-devel # provides sudo texinfo gcc which
+yay # aur + config
+gvim # config
+zsh # config
+grml-zsh-config # ^
+zsh-vi-mode # aur ^
+pkgfile # ^
+tmux
+lynx
+man-db
+man-pages
+
+# backup stuff
+timeshift # aur + systemctl cronie
+syncthing
+rsync
+inotify-tools # ^
+rclone
+
+# basics for graphics
+xorg
+lightdm # systemctl lightdm + config
+lightdm-slick-greeter # ^
+lightdm-settings # aur ^
+cinnamon # config ???
+libgtop # ^
+gnome-terminal # config ???
+gnome-keyring
+firefox # config manual
+
+# ah, yes, i dont want to see ??? instead of characters
+noto-fonts
+noto-fonts-cjk # ^
+noto-fonts-emoji # ^
+noto-fonts-extra # ^
+ttf-dejavu
+unicode-emoji
+
+# what would i do without archiving tools
+unrar
+zip
+unzip
+p7zip
+p7zip-gui # aur
+
+# i just want to be nice
+pkgstats
+
+# non-basic development
+openssh # systemctl sshd + config
+ngrok # aur + config ^
+python
+logisim # aur
+gnuplot
+wget
+jq
+pacman-contrib
+reflector
+
+# helps with all that
+ranger
+htop # config
+strace # ^
+nethogs
+xclip
+ascii
+gucharmap
+
+# ah, yes, i look cool
+cmatrix
+neofetch
+
+# specifically for C
+gdb
+ctags
+sdl2
+sdl2_image
+sdl2_gfx
+sdl2_net
+sdl2_mixer
+sdl2_ttf
+nlohmann-json
+cpp-httplib # aur
+uthash
+
+# hate to do it, but
+jdk-openjdk
+openjdk-doc
+
+# customize my ass
+dedsec-grub2-theme # aur
+mint-artwork # aur
+mint-themes # aur
+mint-y-icons # aur
+iso-flag-png # aur
+bibata-cursor-theme # aur
+dconf-editor
+
+# social stuff
+telegram-desktop # config manual
+whatsapp-nativefier # aur + config manual
+discord # config + config manual
+betterdiscord-installer # config ^
+vk-messenger # aur + config manual
+zoom # aur + config + config manual
+skypeforlinux-stable-bin # aur + config + config manual
+
+# android
+scrcpy
+droidcam # aur + config manual
+v4l2loopback-dkms # ^
+linux-headers # ^
+android-tools # ^
+gvfs-mtp # ^
+
+# some programs for images
+feh
+gimp
+img2pdf
+gnome-screenshot
+tesseract
+tesseract-data-eng # ^
+tesseract-data-rus # ^
+
+# video things
+vlc
+obs-studio
+openshot
+
+# games
+wine
+steam # config manual
+steam-fonts # aur ^
+heroic-games-launcher-bin # aur
+rogue
+pekka-kana-2 # aur
+
+# documents
+libreoffice-still
+xreader
+djvulibre # ^
+
+# all for disks
+ventoy-bin
+baobab
+czkawka-cli # aur
+gparted
+dosfstools # ^
+exfatprogs # ^
+mtools # ^
+
+# just plain useful
+qalculate-gtk
+virtualbox
+teamviewer # aur + config manual
+transmission-gtk
+tor # systemctl tor
+torsocks # ^
+
+# i'll study those for now
+gtypist
+typespeed
