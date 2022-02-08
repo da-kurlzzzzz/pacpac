@@ -12,13 +12,6 @@ efibootmgr
 iwd # config + config manual + systemctl iwd
 ntfs-3g
 
-# my own hardware
-blueberry # systemctl bluetooth
-cups # systemctl cups
-avahi # systemctl avahi-daemon ^
-system-config-printer # config manual ^
-numlockx
-
 # basic development
 git
 base-devel # provides sudo texinfo gcc which
@@ -33,43 +26,12 @@ lynx
 man-db
 man-pages
 
-# backup stuff
-timeshift # aur + systemctl cronie
-syncthing
-rsync
-inotify-tools # ^
-rclone
-
-# basics for graphics
-xorg
-lightdm # systemctl lightdm + config
-lightdm-slick-greeter # ^
-lightdm-settings # aur ^
-cinnamon # config ???
-libgtop # ^
-gnome-terminal # config ???
-gnome-keyring
-firefox # config manual
-
-# ah, yes, i dont want to see ??? instead of characters
-noto-fonts
-noto-fonts-cjk # ^
-noto-fonts-emoji # ^
-noto-fonts-extra # ^
-ttf-dejavu
-ttf-opensans
-ttf-ubuntu-font-family
-unicode-emoji
-
-# what would i do without archiving tools
-unrar
-zip
-unzip
-p7zip
-p7zip-gui # aur
-
-# i just want to be nice
-pkgstats
+# my own hardware
+blueberry # systemctl bluetooth
+cups # systemctl cups
+avahi # systemctl avahi-daemon ^
+system-config-printer # config manual ^
+numlockx
 
 # non-basic development
 openssh # systemctl sshd + config
@@ -113,6 +75,44 @@ uthash
 # hate to do it, but
 jdk-openjdk
 openjdk-doc
+
+# backup stuff
+timeshift # aur + systemctl cronie
+syncthing
+rsync
+inotify-tools # ^
+rclone
+
+# basics for graphics
+xorg
+lightdm # systemctl lightdm + config
+lightdm-slick-greeter # ^
+lightdm-settings # aur ^
+cinnamon # config ???
+libgtop # ^
+gnome-terminal # config ???
+gnome-keyring
+firefox # config manual
+
+# ah, yes, i dont want to see ??? instead of characters
+noto-fonts
+noto-fonts-cjk # ^
+noto-fonts-emoji # ^
+noto-fonts-extra # ^
+ttf-dejavu
+ttf-opensans
+ttf-ubuntu-font-family
+unicode-emoji
+
+# what would i do without archiving tools
+unrar
+zip
+unzip
+p7zip
+p7zip-gui # aur
+
+# i just want to be nice
+pkgstats
 
 # customize my ass
 dedsec-grub2-theme # aur
