@@ -9,9 +9,7 @@ grub # config
 efibootmgr
 
 # for hardware
-networkmanager # systemctl NetworkManager
-iw # config manual
-iwd # systemctl iwd ^
+iwd # config + config manual + systemctl iwd
 ntfs-3g
 
 # my own hardware
