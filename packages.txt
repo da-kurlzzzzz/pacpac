@@ -5,21 +5,21 @@ linux-firmware
 
 # duh
 intel-ucode
-grub # config
+grub
 efibootmgr
 
 # for hardware
-iwd # config + config manual + systemctl iwd
+iwd # config + systemctl iwd
 ntfs-3g
 
 # basic development
-git
+git # config
 base-devel # provides sudo texinfo gcc which
 yay # aur + config
-gvim # config
-zsh # config
+gvim
+zsh
 grml-zsh-config # ^
-zsh-vi-mode # aur ^
+zsh-vi-mode # aur + ^
 pkgfile # ^
 tmux
 lynx
@@ -29,13 +29,13 @@ man-pages
 # my own hardware
 blueberry # systemctl bluetooth
 cups # systemctl cups
-avahi # systemctl avahi-daemon ^
-system-config-printer # config manual ^
+avahi # systemctl avahi-daemon + ^
+system-config-printer # config + ^
 numlockx
 
 # non-basic development
-openssh # systemctl sshd + config
-ngrok # aur + config ^
+openssh # systemctl sshd
+ngrok # aur + config + ^
 python
 logisim # aur
 gnuplot
@@ -43,12 +43,12 @@ wget
 curl
 jq
 pacman-contrib
-reflector
-md2pdf
+reflector # systemctl reflector
+md2pdf # aur
 
 # helps with all that
 ranger
-htop # config
+htop
 strace # ^
 nethogs
 xclip
@@ -85,14 +85,14 @@ rclone
 
 # basics for graphics
 xorg
-lightdm # systemctl lightdm + config
+lightdm # systemctl lightdm
 lightdm-slick-greeter # ^
 lightdm-settings # aur ^
-cinnamon # config ???
+cinnamon # config
 libgtop # ^
-gnome-terminal # config ???
+gnome-terminal
 gnome-keyring
-firefox # config manual
+firefox # config
 
 # ah, yes, i dont want to see ??? instead of characters
 noto-fonts
@@ -124,17 +124,17 @@ bibata-cursor-theme # aur
 dconf-editor
 
 # social stuff
-telegram-desktop # config manual
-whatsapp-nativefier # aur + config manual
-discord # config + config manual
+telegram-desktop # config
+whatsapp-nativefier # aur + config
+discord # config + config
 betterdiscord-installer # config ^
-vk-messenger # aur + config manual
-zoom # aur + config + config manual
-skypeforlinux-stable-bin # aur + config + config manual
+vk-messenger # aur + config
+zoom # aur + config
+skypeforlinux-stable-bin # aur + config
 
 # android
 scrcpy
-droidcam # aur + config manual
+droidcam # aur + config
 v4l2loopback-dkms # ^
 linux-headers # ^
 android-tools # ^
@@ -157,7 +157,7 @@ openshot
 
 # games
 wine
-steam # config manual
+steam # config
 steam-fonts # aur ^
 heroic-games-launcher-bin # aur
 rogue
@@ -180,7 +180,7 @@ mtools # ^
 # just plain useful
 qalculate-gtk
 virtualbox
-teamviewer # aur + config manual
+teamviewer # aur + config
 transmission-gtk
 tor # systemctl tor
 torsocks # ^
