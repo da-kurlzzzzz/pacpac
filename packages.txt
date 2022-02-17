@@ -32,6 +32,7 @@ cups # systemctl cups
 avahi # systemctl avahi-daemon + ^
 system-config-printer # config + ^
 numlockx
+upower
 
 # non-basic development
 openssh # systemctl sshd
@@ -127,7 +128,7 @@ dconf-editor
 telegram-desktop # config
 whatsapp-nativefier # aur + config
 discord # config + config
-betterdiscord-installer # config ^
+betterdiscord-installer # aur + config ^
 vk-messenger # aur + config
 zoom # aur + config
 skypeforlinux-stable-bin # aur + config
@@ -169,7 +170,7 @@ xreader
 djvulibre # ^
 
 # all for disks
-ventoy-bin
+ventoy-bin # aur
 baobab
 czkawka-cli # aur
 gparted
