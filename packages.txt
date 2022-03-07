@@ -46,6 +46,7 @@ jq
 pacman-contrib
 reflector # systemctl reflector
 md2pdf # aur
+arch-install-scripts
 
 # helps with all that
 ranger
@@ -55,6 +56,7 @@ nethogs
 xclip
 ascii
 gucharmap
+speedtest-cli
 
 # ah, yes, i look cool
 cmatrix
@@ -155,9 +157,11 @@ tesseract-data-rus # ^
 vlc
 obs-studio
 openshot
+hypnotix
 
 # games
 wine
+wine-mono # ^
 steam # config
 steam-fonts # aur ^
 heroic-games-launcher-bin # aur
@@ -189,3 +193,6 @@ torsocks # ^
 # i'll study those for now
 gtypist
 typespeed
+
+# crypto go brrr
+electrum
