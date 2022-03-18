@@ -61,6 +61,7 @@ speedtest-cli
 # ah, yes, i look cool
 cmatrix
 neofetch
+onefetch
 
 # specifically for C
 gdb
