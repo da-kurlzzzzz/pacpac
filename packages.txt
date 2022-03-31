@@ -135,6 +135,7 @@ betterdiscord-installer # aur + config ^
 vk-messenger # aur + config
 zoom # aur + config
 skypeforlinux-stable-bin # aur + config
+instaloader # aur
 
 # android
 scrcpy
@@ -164,7 +165,6 @@ hypnotix
 wine
 wine-mono # ^
 steam # config
-steam-fonts # aur ^
 heroic-games-launcher-bin # aur
 rogue
 pekka-kana-2 # aur
@@ -194,6 +194,7 @@ torsocks # ^
 # i'll study those for now
 gtypist
 typespeed
+docker
 
 # crypto go brrr
 electrum
