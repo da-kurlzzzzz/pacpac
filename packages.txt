@@ -28,6 +28,7 @@ man-pages
 
 # my own hardware
 blueberry # systemctl bluetooth
+bluez-utils # ^
 cups # systemctl cups
 avahi # systemctl avahi-daemon + ^
 system-config-printer # config + ^
@@ -38,6 +39,7 @@ upower
 openssh # systemctl sshd
 ngrok # aur + config + ^
 python
+python-pip # ^
 logisim # aur
 gnuplot
 wget
@@ -164,6 +166,7 @@ hypnotix
 # games
 wine
 wine-mono # ^
+winetricks # ^
 steam # config
 heroic-games-launcher-bin # aur
 rogue
@@ -190,10 +193,12 @@ teamviewer # aur + config
 transmission-gtk
 tor # systemctl tor
 torsocks # ^
+torbrowser-launcher # ^
 
 # i'll study those for now
 gtypist
 typespeed
+vtk
 docker
 
 # crypto go brrr
