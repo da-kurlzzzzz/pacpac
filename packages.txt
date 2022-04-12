@@ -161,7 +161,7 @@ tesseract-data-rus # ^
 vlc
 obs-studio
 openshot
-hypnotix
+hypnotix # aur
 
 # games
 wine
@@ -196,7 +196,7 @@ torsocks # ^
 torbrowser-launcher # ^
 
 # i'll study those for now
-gtypist
+gtypist # aur
 typespeed
 vtk
 docker
