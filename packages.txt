@@ -49,6 +49,7 @@ pacman-contrib
 reflector # systemctl reflector
 md2pdf # aur
 arch-install-scripts
+downgrade
 
 # helps with all that
 ranger
@@ -64,6 +65,7 @@ speedtest-cli
 cmatrix
 neofetch
 onefetch
+tty-clock-git
 
 # specifically for C
 gdb
@@ -139,13 +141,14 @@ zoom # aur + config
 skypeforlinux-stable-bin # aur + config
 instaloader # aur
 
-# android
+# phone
 scrcpy
 droidcam # aur + config
 v4l2loopback-dkms # ^
 linux-headers # ^
 android-tools # ^
 gvfs-mtp # ^
+ifuse
 
 # some programs for images
 feh
