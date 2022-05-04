@@ -17,6 +17,7 @@ git # config
 base-devel # provides sudo texinfo gcc which
 yay # aur + config
 gvim
+vim-ranger # aur + ^
 zsh
 grml-zsh-config # ^
 zsh-vi-mode # aur + ^
