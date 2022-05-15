@@ -103,6 +103,9 @@ libgtop # ^
 gnome-terminal
 gnome-keyring
 firefox # config
+i3-wm
+dmenu # ^
+i3status # ^
 
 # ah, yes, i dont want to see ??? instead of characters
 noto-fonts
