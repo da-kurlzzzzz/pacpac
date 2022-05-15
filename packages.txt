@@ -26,6 +26,7 @@ tmux
 lynx
 man-db
 man-pages
+texi2html
 
 # my own hardware
 blueberry # systemctl bluetooth
