@@ -112,6 +112,8 @@ ttf-dejavu
 ttf-opensans
 ttf-ubuntu-font-family
 unicode-emoji
+enca
+python-unidecode
 
 # what would i do without archiving tools
 unrar
