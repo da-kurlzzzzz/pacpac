@@ -32,14 +32,11 @@ texi2html
 blueberry # systemctl bluetooth
 bluez-utils # ^
 cups # systemctl cups
-avahi # systemctl avahi-daemon + ^
-system-config-printer # config + ^
 numlockx
 upower
 
 # non-basic development
 openssh # systemctl sshd
-ngrok # aur + config + ^
 python
 python-pip # ^
 logisim # aur
@@ -99,6 +96,7 @@ lightdm # systemctl lightdm
 lightdm-slick-greeter # ^
 lightdm-settings # aur ^
 cinnamon # config
+system-config-printer # config + ^
 libgtop # ^
 gnome-terminal
 gnome-keyring
@@ -213,3 +211,7 @@ docker
 
 # crypto go brrr
 electrum
+
+# home server things
+avahi # systemctl avahi-daemon
+ngrok # aur + config
