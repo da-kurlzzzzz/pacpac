@@ -208,6 +208,8 @@ gtypist # aur
 typespeed
 vtk
 docker
+nmap
+openbsd-netcat
 
 # crypto go brrr
 electrum
