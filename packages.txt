@@ -198,7 +198,6 @@ mtools # ^
 # just plain useful
 qalculate-gtk
 virtualbox
-teamviewer # aur + config
 transmission-gtk
 tor # systemctl tor
 torsocks # ^
