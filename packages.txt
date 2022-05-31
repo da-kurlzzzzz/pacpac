@@ -176,6 +176,7 @@ wine
 wine-mono # ^
 winetricks # ^
 steam # config
+ttf-liberation # ^
 heroic-games-launcher-bin # aur
 rogue
 pekka-kana-2 # aur
