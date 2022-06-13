@@ -65,6 +65,7 @@ cmatrix
 neofetch
 onefetch
 tty-clock-git
+screenkey
 
 # specifically for C
 gdb
@@ -210,6 +211,8 @@ vtk
 docker
 nmap
 openbsd-netcat
+task
+pandoc
 
 # crypto go brrr
 electrum
@@ -217,3 +220,5 @@ electrum
 # home server things
 avahi # systemctl avahi-daemon
 ngrok # aur + config
+nginx-mainline
+certbot-nginx # ^
