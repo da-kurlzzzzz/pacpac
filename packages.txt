@@ -43,7 +43,7 @@ logisim # aur
 gnuplot
 wget
 curl
-jq
+yq
 pacman-contrib
 reflector # systemctl reflector
 md2pdf # aur
