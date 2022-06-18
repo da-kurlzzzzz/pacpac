@@ -20,7 +20,7 @@ gvim
 vim-ranger # aur + ^
 zsh
 grml-zsh-config # ^
-zsh-vi-mode # aur + ^
+zsh-vi-mode-git # aur + ^
 pkgfile # ^
 tmux
 lynx
