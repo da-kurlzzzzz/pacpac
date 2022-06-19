@@ -93,6 +93,7 @@ rclone
 
 # basics for graphics
 xorg
+xorg-xinit
 lightdm # systemctl lightdm
 lightdm-slick-greeter # ^
 lightdm-settings # aur ^
@@ -195,6 +196,7 @@ gparted
 dosfstools # ^
 exfatprogs # ^
 mtools # ^
+udiskie
 
 # just plain useful
 qalculate-gtk
