@@ -138,6 +138,7 @@ mint-y-icons # aur
 iso-flag-png # aur
 bibata-cursor-theme # aur
 dconf-editor
+lxappearance
 
 # social stuff
 telegram-desktop # config
