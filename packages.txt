@@ -5,7 +5,6 @@ linux-firmware
 
 # duh
 intel-ucode
-grub
 efibootmgr
 
 # for hardware
@@ -131,7 +130,6 @@ p7zip-gui # aur
 pkgstats
 
 # customize my ass
-dedsec-grub2-theme # aur
 mint-artwork # aur
 mint-themes # aur
 mint-y-icons # aur
