@@ -88,7 +88,6 @@ openjdk-doc
 timeshift # aur + systemctl cronie
 syncthing
 rsync
-inotify-tools # ^
 rclone
 
 # basics for graphics
