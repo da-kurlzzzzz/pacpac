@@ -186,7 +186,6 @@ torbrowser-launcher # ^
 gtypist # aur
 typespeed
 vtk
-docker
 nmap
 openbsd-netcat
 task
