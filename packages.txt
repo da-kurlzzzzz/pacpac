@@ -94,14 +94,7 @@ rclone
 # basics for graphics
 xorg
 xorg-xinit
-lightdm # systemctl lightdm
-lightdm-slick-greeter # ^
-lightdm-settings # aur ^
-cinnamon # config
-system-config-printer # config + ^
-libgtop # ^
 gnome-terminal
-gnome-keyring
 firefox # config
 i3-wm
 dmenu # ^
@@ -130,12 +123,7 @@ p7zip-gui # aur
 pkgstats
 
 # customize my ass
-mint-artwork # aur
-mint-themes # aur
-mint-y-icons # aur
-iso-flag-png # aur
 bibata-cursor-theme # aur
-dconf-editor
 lxappearance
 
 # social stuff
@@ -162,7 +150,6 @@ feh
 gimp
 imagemagick
 img2pdf
-gnome-screenshot
 tesseract
 tesseract-data-eng # ^
 tesseract-data-rus # ^
