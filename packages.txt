@@ -11,6 +11,7 @@ efibootmgr
 iwd # config + systemctl iwd
 ntfs-3g
 xf86-video-intel
+alsa-utils
 
 # basic development
 git # config
