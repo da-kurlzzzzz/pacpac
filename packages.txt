@@ -105,19 +105,11 @@ noto-fonts
 noto-fonts-cjk # ^
 noto-fonts-emoji # ^
 noto-fonts-extra # ^
-ttf-dejavu
-ttf-opensans
-ttf-ubuntu-font-family
-unicode-emoji
 enca
 python-unidecode
 
 # what would i do without archiving tools
-unrar
-zip
-unzip
 p7zip
-p7zip-gui # aur
 
 # i just want to be nice
 pkgstats
@@ -134,7 +126,6 @@ betterdiscord-installer # aur + config ^
 vk-messenger # aur + config
 zoom # aur + config
 skypeforlinux-stable-bin # aur + config
-instaloader # aur
 
 # phone
 scrcpy
@@ -165,7 +156,6 @@ wine
 wine-mono # ^
 winetricks # ^
 steam # config
-ttf-liberation # ^
 heroic-games-launcher-bin # aur
 rogue
 pekka-kana-2 # aur
@@ -177,7 +167,6 @@ djvulibre # ^
 
 # all for disks
 ventoy-bin # aur
-baobab
 czkawka-cli # aur
 gparted
 dosfstools # ^
