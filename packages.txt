@@ -92,8 +92,9 @@ rsync
 rclone
 
 # basics for graphics
-xorg
+xorg-server
 xorg-xinit
+xorg-xinput
 gnome-terminal
 firefox # config
 i3-wm
