@@ -118,6 +118,7 @@ pkgstats
 # customize my ass
 bibata-cursor-theme # aur
 lxappearance
+gnome-themes-extra
 
 # social stuff
 telegram-desktop # config
@@ -182,6 +183,7 @@ transmission-gtk
 tor # systemctl tor
 torsocks # ^
 torbrowser-launcher # ^
+system-config-printer
 
 # i'll study those for now
 gtypist # aur
