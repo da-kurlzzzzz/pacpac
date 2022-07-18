@@ -169,7 +169,7 @@ djvulibre # ^
 
 # all for disks
 ventoy-bin # aur
-czkawka-cli # aur
+czkawka-cli-bin # aur
 gparted
 dosfstools # ^
 exfatprogs # ^
