@@ -179,7 +179,7 @@ udiskie
 # just plain useful
 qalculate-gtk
 virtualbox
-transmission-gtk
+transmission-cli
 tor # systemctl tor
 torsocks # ^
 torbrowser-launcher # ^
