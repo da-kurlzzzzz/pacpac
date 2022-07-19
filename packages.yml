@@ -1,0 +1,276 @@
+packages:
+# according to installation guide
+- name: base
+- name: linux
+- name: linux-firmware
+
+# duh
+- name: intel-ucode
+- name: efibootmgr
+
+# for hardware
+- name: iwd
+  needs-manual-config: true
+  systemctl: iwd
+- name: ntfs-3g
+- name: xf86-video-intel
+- name: alsa-utils
+
+# basic development
+- name: git
+- name: base-devel # provides sudo texinfo gcc which
+  group: true
+- name: yay
+  needs-manual-config: true
+  aur: true
+- name: gvim
+- name: vim-ranger
+  optional-for: gvim
+  aur: true
+- name: zsh
+- name: grml-zsh-config
+  optional-for: zsh
+- name: zsh-vi-mode-git
+  optional-for: zsh
+  aur: true
+- name: pkgfile
+  optional-for: zsh
+- name: tmux
+- name: lynx
+- name: man-db
+- name: man-pages
+- name: texi2html
+
+# my own hardware
+- name: blueberry
+  systemctl: bluetooth
+- name: bluez-utils
+  optional-for: blueberry
+- name: cups
+  systemctl: cups
+- name: numlockx
+- name: upower
+
+# non-basic development
+- name: openssh
+  systemctl: sshd
+- name: python
+- name: python-pip
+  optional-for: python
+- name: logisim
+  aur: true
+- name: gnuplot
+- name: wget
+- name: curl
+- name: yq
+- name: pacman-contrib
+- name: reflector
+  systemctl: reflector
+- name: md2pdf
+  aur: true
+- name: arch-install-scripts
+- name: downgrade
+  aur: true
+
+# helps with all that
+- name: ranger
+- name: htop
+- name: strace
+  optional-for: htop
+- name: nethogs
+- name: xclip
+- name: ascii
+- name: gucharmap
+- name: speedtest-cli
+
+# ah, yes, i look cool
+- name: cmatrix
+- name: neofetch
+- name: onefetch
+- name: tty-clock-git
+  aur: true
+- name: screenkey
+
+# specifically for C
+- name: gdb
+- name: ctags
+- name: sdl2
+- name: sdl2_image
+- name: sdl2_gfx
+- name: sdl2_net
+- name: sdl2_mixer
+- name: sdl2_ttf
+- name: nlohmann-json
+- name: cpp-httplib
+  aur: true
+- name: uthash
+
+# hate to do it, but
+- name: jdk-openjdk
+- name: openjdk-doc
+
+# backup stuff
+- name: timeshift
+  aur: true
+  systemctl: cronie
+- name: syncthing
+- name: rsync
+- name: rclone
+
+# basics for graphics
+- name: xorg-server
+- name: xorg-xinit
+- name: xorg-xinput
+- name: gnome-terminal
+- name: firefox
+  needs-manual-config: true
+- name: i3-wm
+- name: dmenu
+  optional-for: i3-wm
+- name: i3status
+  optional-for: i3-wm
+
+# ah, yes, i dont want to see ??? instead of characters
+- name: noto-fonts
+- name: noto-fonts-cjk
+  optional-for: noto-fonts
+- name: noto-fonts-emoji
+  optional-for: noto-fonts
+- name: noto-fonts-extra
+  optional-for: noto-fonts
+- name: enca
+- name: python-unidecode
+
+# what would i do without archiving tools
+- name: p7zip
+
+# i just want to be nice
+- name: pkgstats
+
+# customize my ass
+- name: bibata-cursor-theme
+  aur: true
+- name: lxappearance
+- name: gnome-themes-extra
+
+# social stuff
+- name: telegram-desktop
+  needs-manual-config: true
+- name: whatsapp-nativefier
+  needs-manual-config: true
+  aur: true
+- name: discord
+  needs-manual-config: true
+- name: betterdiscord-installer
+  needs-manual-config: true
+  optional-for: discord
+  aur: true
+- name: vk-messenger
+  needs-manual-config: true
+  aur: true
+- name: zoom
+  needs-manual-config: true
+  aur: true
+- name: skypeforlinux-stable-bin
+  needs-manual-config: true
+  aur: true
+
+# phone
+- name: scrcpy
+- name: droidcam
+  needs-manual-config: true
+  aur: true
+- name: v4l2loopback-dkms
+  optional-for: droidcam
+- name: linux-headers
+  optional-for: droidcam
+- name: android-tools
+  optional-for: droidcam
+- name: gvfs-mtp
+  optional-for: droidcam
+- name: ifuse
+
+# some programs for images
+- name: feh
+- name: gimp
+- name: imagemagick
+- name: img2pdf
+- name: tesseract
+- name: tesseract-data-eng
+  optional-for: tesseract
+- name: tesseract-data-rus
+  optional-for: tesseract
+
+# video things
+- name: vlc
+- name: obs-studio
+- name: openshot
+- name: hypnotix
+  aur: true
+
+# games
+- name: wine
+- name: wine-mono
+- name: winetricks
+- name: steam
+  needs-manual-config: true
+- name: heroic-games-launcher-bin
+  aur: true
+- name: rogue
+- name: pekka-kana-2
+  aur: true
+
+# documents
+- name: libreoffice-still
+- name: xreader
+- name: djvulibre
+  optional-for: xreader
+
+# all for disks
+- name: ventoy-bin
+  aur: true
+- name: czkawka-cli-bin
+  aur: true
+- name: gparted
+- name: dosfstools
+  optional-for: gparted
+- name: exfatprogs
+  optional-for: gparted
+- name: mtools
+  optional-for: gparted
+- name: udiskie
+
+# just plain useful
+- name: qalculate-gtk
+- name: virtualbox
+- name: transmission-cli
+- name: tor
+  systemctl: tor
+- name: torsocks
+  optional-for: tor
+- name: torbrowser-launcher
+  optional-for: tor
+- name: system-config-printer
+
+# i'll study those for now
+- name: gtypist
+  aur: true
+- name: typespeed
+- name: vtk
+- name: nmap
+- name: openbsd-netcat
+- name: task
+- name: pandoc
+
+# crypto go brrr
+- name: electrum
+
+# home server things
+- name: avahi
+  systemctl: avahi-daemon
+- name: ngrok
+  needs-manual-config: true
+  aur: true
+- name: nginx-mainline
+- name: certbot-nginx
+  optional-for: nginx-mainline
