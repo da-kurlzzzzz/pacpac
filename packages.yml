@@ -121,7 +121,10 @@ packages:
 - name: xorg-server
 - name: xorg-xinit
 - name: xorg-xinput
-- name: gnome-terminal
+- name: alacritty
+- name: alacritty-themes
+  aur: true
+  optional-for: alacritty
 - name: firefox
   needs-manual-config: true
 - name: i3-wm

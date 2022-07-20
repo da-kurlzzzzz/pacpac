@@ -95,7 +95,8 @@ rclone
 xorg-server
 xorg-xinit
 xorg-xinput
-gnome-terminal
+alacritty
+alacritty-themes # aur
 firefox # config
 i3-wm
 dmenu # ^
