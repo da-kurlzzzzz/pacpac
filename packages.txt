@@ -194,6 +194,8 @@ nmap
 openbsd-netcat
 task
 pandoc
+sqlite
+sqlite-doc
 
 # crypto go brrr
 electrum

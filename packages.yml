@@ -264,6 +264,9 @@ packages:
 - name: openbsd-netcat
 - name: task
 - name: pandoc
+- name: sqlite
+- name: sqlite-doc
+  optional-for: sqlite
 
 # crypto go brrr
 - name: electrum
