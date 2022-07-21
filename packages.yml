@@ -36,6 +36,10 @@ packages:
 - name: pkgfile
   optional-for: zsh
 - name: tmux
+- name: tmux-plugin-manager-git
+  optional-for: tmux
+  aur: true
+  needs-manual-config: true
 - name: lynx
 - name: man-db
 - name: man-pages
