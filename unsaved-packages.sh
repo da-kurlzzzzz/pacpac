@@ -13,10 +13,10 @@ PACMAN=yay
 PKGFILE=${1:-"$(dirname $(realpath $0))/packages.yml"}
 
 # get just package names
-PKGLIST=$(yq -r '.packages[].name' ${PKGFILE} | sort)
+PKGLIST=$(yq -r '.packages[].name' ${PKGFILE})
 
 # there is no way to list installed groups so just get group names from file
-GROUPLIST=$(yq -r '.packages[] | select(has("group")).name' ${PKGFILE} | sort)
+GROUPLIST=$(yq -r '.packages[] | select(has("group")).name' ${PKGFILE})
 
 # get packages from groups
 GROUPED=$($PACMAN -Qqg $GROUPLIST)
