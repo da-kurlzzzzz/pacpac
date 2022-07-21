@@ -29,4 +29,5 @@ ALL="$UNGROUPED
 $GROUPLIST"
 
 # and compare
-comm -3 <(sort <<< $ALL) - <<< $PKGLIST
+grep -v $(printf -- '-e ^%s$ ' $PKGLIST) <<< $ALL && echo ":unsaved" || true
+grep -v $(printf -- '-e ^%s$ ' $ALL) <<< $PKGLIST && echo ":uninstalled" || true
