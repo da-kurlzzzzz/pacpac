@@ -22,7 +22,7 @@ GROUPLIST=$(yq -r '.packages[] | select(has("group")).name' ${PKGFILE} | sort)
 GROUPED=$($PACMAN -Qqg $GROUPLIST)
 
 # get all others
-UNGROUPED=$(printf -- '-e "^%s$" ' $GROUPED | xargs grep -v <($PACMAN -Qqe))
+UNGROUPED=$($PACMAN -Qqe | grep -v $(printf -- '-e ^%s$ ' $GROUPED))
 
 # merge them
 ALL="$UNGROUPED
