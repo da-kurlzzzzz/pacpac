@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# script to get packages, which are not in my great package list (packages.txt)
+# script to get packages, which are not in my great package list (packages.yml)
 # if you run this - feed the file to the script:
-# ./unsaved_packages.sh packages.txt
+# ./unsaved_packages.sh packages.yml
 
 # here it comes
 
@@ -10,13 +10,13 @@
 PACMAN=yay
 
 # get file either from $1 or from default location
-PKGFILE=${1:-"$(dirname $(realpath $0))/packages.txt"}
+PKGFILE=${1:-"$(dirname $(realpath $0))/packages.yml"}
 
-# remove comments, trailing spaces and empty lines
-PKGLIST=$(sed 's/#.*//;s/\s*$//;/^$/d' ${PKGFILE} | sort)
+# get just package names
+PKGLIST=$(yq -r '.packages[].name' ${PKGFILE} | sort)
 
 # there is no way to list installed groups so just get group names from file
-GROUPLIST=$(comm -12 <($PACMAN -Sg | sort) - <<< $PKGLIST)
+GROUPLIST=$(yq -r '.packages[] | select(has("group")).name' ${PKGFILE} | sort)
 
 # get packages from groups
 GROUPED=$($PACMAN -Qg $GROUPLIST | cut -d' ' -f2)
