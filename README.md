@@ -7,6 +7,9 @@ need a fresh Arch Linux installation I can just do
 
 And everything will be installed
 
+Important: file format was changed from plain text to yaml and most remarks
+are useless now. I will update README soon
+
 # Basic syntax
 The syntax in comments is as of now just meant for stuff like `grep` but maybe
 I'll extend the scripts's capabilities

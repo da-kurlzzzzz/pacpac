@@ -2,7 +2,7 @@
 
 # script to get packages, which are not in my great package list (packages.yml)
 # if you run this - feed the file to the script:
-# ./unsaved_packages.sh packages.yml
+# ./unsaved-packages.sh packages.yml
 
 # here it comes
 
