@@ -23,7 +23,6 @@ packages:
   needs-manual-config: true # sudoers
   group: true
 - name: yay
-  needs-manual-config: true
   aur: true
 - name: gvim
 - name: vim-ranger
