@@ -10,15 +10,17 @@ packages:
 
 # for hardware
 - name: iwd
-  needs-manual-config: true
+  needs-manual-config: true # wi-fi networks and DHCP
   systemctl: iwd
 - name: ntfs-3g
 - name: xf86-video-intel
 - name: alsa-utils
+  needs-manual-config: true # unmute channels
 
 # basic development
 - name: git
 - name: base-devel # provides sudo texinfo gcc which
+  needs-manual-config: true # sudoers
   group: true
 - name: yay
   needs-manual-config: true
@@ -39,7 +41,7 @@ packages:
 - name: tmux-plugin-manager-git
   optional-for: tmux
   aur: true
-  needs-manual-config: true
+  needs-manual-config: true # prefix+I to install all
 - name: lynx
 - name: man-db
 - name: man-pages
@@ -49,6 +51,7 @@ packages:
 - name: blueberry
   systemctl: bluetooth
 - name: bluez-utils
+  needs-manual-config: true # add devices
   optional-for: blueberry
 - name: cups
   systemctl: cups
@@ -82,6 +85,7 @@ packages:
 - name: strace
   optional-for: htop
 - name: nethogs
+  needs-manual-config: true # setcap as described in manual
 - name: xclip
 - name: ascii
 - name: gucharmap
@@ -117,9 +121,12 @@ packages:
 - name: timeshift
   aur: true
   systemctl: cronie
+  needs-manual-config: true # go through initial wizard
 - name: syncthing
+  needs-manual-config: true # too much hassle to backup so init everything manually
 - name: rsync
 - name: rclone
+  needs-manual-config: true # might add config file later
 
 # basics for graphics
 - name: xorg-server
@@ -130,7 +137,7 @@ packages:
   aur: true
   optional-for: alacritty
 - name: firefox
-  needs-manual-config: true
+  needs-manual-config: true # log into firefox account and set theme
 - name: i3-wm
 - name: dmenu
   optional-for: i3-wm
@@ -158,34 +165,35 @@ packages:
 - name: bibata-cursor-theme
   aur: true
 - name: lxappearance
+  needs-manual-config: true # might add config files later
 - name: gnome-themes-extra
 
 # social stuff
 - name: telegram-desktop
-  needs-manual-config: true
+  needs-manual-config: true # log into account
 - name: whatsapp-nativefier
-  needs-manual-config: true
+  needs-manual-config: true # log into account
   aur: true
 - name: discord
-  needs-manual-config: true
+  needs-manual-config: true # log into account
 - name: betterdiscord-installer
-  needs-manual-config: true
+  needs-manual-config: true # go through installation
   optional-for: discord
   aur: true
 - name: vk-messenger
-  needs-manual-config: true
+  needs-manual-config: true # log into account
   aur: true
 - name: zoom
-  needs-manual-config: true
+  needs-manual-config: true # log into account
   aur: true
 - name: skypeforlinux-stable-bin
-  needs-manual-config: true
+  needs-manual-config: true # log into account
   aur: true
 
 # phone
 - name: scrcpy
 - name: droidcam
-  needs-manual-config: true
+  needs-manual-config: true # a bit of a hassle, might document it later
   aur: true
 - name: v4l2loopback-dkms
   optional-for: droidcam
@@ -217,12 +225,14 @@ packages:
 
 # games
 - name: wine
+  needs-manual-config: true # first run and symlink to drive_c
 - name: wine-mono
 - name: winetricks
 - name: steam
-  needs-manual-config: true
+  needs-manual-config: true # log into account
 - name: heroic-games-launcher-bin
   aur: true
+  needs-manual-config: true # log into account
 - name: rogue
 - name: pekka-kana-2
   aur: true
@@ -249,7 +259,9 @@ packages:
 
 # just plain useful
 - name: qalculate-gtk
+  needs-manual-config: true # might add config file later
 - name: virtualbox
+  needs-manual-config: true # create boxes
 - name: transmission-cli
 - name: tor
   systemctl: tor
@@ -279,8 +291,10 @@ packages:
 - name: avahi
   systemctl: avahi-daemon
 - name: ngrok
-  needs-manual-config: true
+  needs-manual-config: true # log into account
   aur: true
 - name: nginx-mainline
+  needs-manual-config: true # run make from the odin project to replace config file
 - name: certbot-nginx
+  needs-manual-config: true # add https manually
   optional-for: nginx-mainline
