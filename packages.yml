@@ -54,6 +54,8 @@ packages:
   optional-for: blueberry
 - name: cups
   systemctl: cups
+- name: system-config-printer
+  needs-manual-config: true # add printers and auto configure them
 - name: numlockx
 - name: upower
 
@@ -268,7 +270,6 @@ packages:
   optional-for: tor
 - name: torbrowser-launcher
   optional-for: tor
-- name: system-config-printer
 
 # i'll study those for now
 - name: gtypist
