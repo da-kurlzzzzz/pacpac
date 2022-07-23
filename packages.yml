@@ -63,7 +63,7 @@ packages:
 - name: openssh
   systemctl: sshd
 - name: python
-- name: python-pip
+- name: python-pip # need to check if this is really needed
   optional-for: python
 - name: logisim
   aur: true
@@ -228,7 +228,9 @@ packages:
 - name: wine
   needs-manual-config: true # first run and symlink to drive_c
 - name: wine-mono
+  optional-for: wine
 - name: winetricks
+  optional-for: wine
 - name: steam
   needs-manual-config: true # log into account
 - name: heroic-games-launcher-bin
