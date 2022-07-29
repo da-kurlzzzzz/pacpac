@@ -278,6 +278,10 @@ packages:
   aur: true
 - name: typespeed
 - name: vtk
+- name: eigen
+  optional-for: vtk
+- name: utf8cpp
+  optional-for: vtk
 - name: cmake
 - name: nmap
 - name: openbsd-netcat
