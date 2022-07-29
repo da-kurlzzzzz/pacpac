@@ -69,7 +69,6 @@ packages:
   aur: true
 - name: gnuplot
 - name: wget
-- name: curl
 - name: yq
 - name: pacman-contrib
 - name: reflector
