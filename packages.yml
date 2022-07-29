@@ -278,6 +278,7 @@ packages:
   aur: true
 - name: typespeed
 - name: vtk
+- name: cmake
 - name: nmap
 - name: openbsd-netcat
 - name: task
