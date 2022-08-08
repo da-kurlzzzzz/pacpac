@@ -293,6 +293,8 @@ packages:
 - name: sqlite
 - name: sqlite-doc
   optional-for: sqlite
+- name: archiso
+- name: devtools
 
 # crypto go brrr
 - name: electrum
