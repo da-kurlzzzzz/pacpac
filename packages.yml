@@ -28,6 +28,9 @@ packages:
 - name: vim-ranger
   optional-for: gvim
   aur: true
+- name: vim-ansiesc
+  optional-for: gvim
+  aur: true
 - name: zsh
 - name: grml-zsh-config
   optional-for: zsh
