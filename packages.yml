@@ -275,6 +275,8 @@ packages:
   optional-for: tor
 - name: torbrowser-launcher
   optional-for: tor
+- name: dragon-drop
+  aur: true
 
 # i'll study those for now
 - name: gtypist
