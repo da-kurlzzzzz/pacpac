@@ -9,7 +9,7 @@ packages:
 
 # for hardware
 - name: iwd
-  needs-manual-config: wi-fi networks and DHCP
+  needs-manual-config: wi-fi networks
   systemctl: iwd
 - name: ntfs-3g
 - name: xf86-video-intel
