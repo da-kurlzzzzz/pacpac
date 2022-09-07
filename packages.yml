@@ -68,8 +68,6 @@ packages:
 - name: openssh
   systemctl: sshd
 - name: python
-- name: python-pip # need to check if this is really needed
-  optional-for: python
 - name: logisim
   aur: true
 - name: gnuplot
