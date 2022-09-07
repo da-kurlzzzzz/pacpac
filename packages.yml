@@ -299,7 +299,7 @@ packages:
 - name: devtools
 
 # crypto go brrr
-- name: electrum
+- name: electrum-git
 
 # home server things
 - name: avahi
