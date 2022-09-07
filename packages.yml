@@ -6,7 +6,6 @@ packages:
 
 # duh
 - name: intel-ucode
-- name: efibootmgr
 
 # for hardware
 - name: iwd
