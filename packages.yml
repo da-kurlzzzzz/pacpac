@@ -228,6 +228,7 @@ packages:
 - name: openshot
 - name: hypnotix
   aur: true
+- name: mkvtoolnix-cli
 
 # games
 - name: wine
