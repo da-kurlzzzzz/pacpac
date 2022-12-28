@@ -152,6 +152,7 @@ packages:
   optional-for: i3-wm
 - name: i3status
   optional-for: i3-wm
+- name: perl-anyevent-i3
 
 # ah, yes, i dont want to see ??? instead of characters
 - name: noto-fonts
