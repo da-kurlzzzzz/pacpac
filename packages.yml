@@ -265,6 +265,7 @@ packages:
 - name: mtools
   optional-for: gparted
 - name: udiskie
+- name: smartmontools
 
 # just plain useful
 - name: qalculate-gtk
