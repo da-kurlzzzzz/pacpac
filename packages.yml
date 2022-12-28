@@ -188,9 +188,6 @@ packages:
 - name: zoom
   needs-manual-config: log into account
   aur: true
-- name: skypeforlinux-stable-bin
-  needs-manual-config: log into account
-  aur: true
 
 # phone
 - name: scrcpy
