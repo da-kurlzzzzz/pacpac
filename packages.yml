@@ -165,11 +165,10 @@ packages:
 - name: pkgstats
 
 # customize my ass
-- name: bibata-cursor-theme
-  aur: true
 - name: lxappearance
   needs-manual-config: might add config files later
 - name: gnome-themes-extra
+- name: unclutter
 
 # social stuff
 - name: telegram-desktop
