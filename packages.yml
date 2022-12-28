@@ -34,6 +34,9 @@ packages:
 - name: vim-sensible
   optional-for: gvim
   aur: true
+- name: vim-gnupg
+  optional-for: gvim
+  aur: true
 - name: zsh
 - name: grml-zsh-config
   optional-for: zsh
