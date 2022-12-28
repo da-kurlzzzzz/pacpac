@@ -23,6 +23,7 @@ packages:
   group: true
 - name: yay
   aur: true
+- name: expac
 - name: gvim
 - name: vim-ranger
   optional-for: gvim
