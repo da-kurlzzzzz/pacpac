@@ -81,8 +81,6 @@ packages:
 - name: pacman-contrib
 - name: reflector
   systemctl: reflector
-- name: md2pdf
-  aur: true
 - name: arch-install-scripts
 - name: downgrade
   aur: true
