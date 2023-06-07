@@ -19,13 +19,15 @@ PKGLIST=$(yq -r '.packages[].name' ${PKGFILE})
 GROUPLIST=$(yq -r '.packages[] | select(has("group")).name' ${PKGFILE})
 
 # get packages from groups
-GROUPED=$($PACMAN -Qqg $GROUPLIST)
+[ -z $GROUPLIST ] || GROUPED=$($PACMAN -Qqg $GROUPLIST)
 
 # get all others
 UNGROUPED=$($PACMAN -Qqe | grep -v $(printf -- '-e ^%s$ ' $GROUPED))
 
 # merge them
-ALL="$UNGROUPED
+ALL="$UNGROUPED"
+
+[ -z $GROUPLIST ] || ALL+="
 $GROUPLIST"
 
 # and compare

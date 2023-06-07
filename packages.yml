@@ -20,7 +20,6 @@ packages:
 - name: git
 - name: base-devel # provides sudo texinfo gcc which
   needs-manual-config: sudoers
-  group: true
 - name: yay
   aur: true
 - name: expac
