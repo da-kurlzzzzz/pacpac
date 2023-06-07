@@ -45,7 +45,7 @@ packages:
 - name: pkgfile
   optional-for: zsh
 - name: tmux
-- name: tmux-plugin-manager-git
+- name: tmux-plugin-manager
   optional-for: tmux
   aur: true
   needs-manual-config: prefix+I to install all
@@ -295,7 +295,7 @@ packages:
 - name: nmap
 - name: openbsd-netcat
 - name: task
-- name: pandoc
+- name: pandoc-cli
 - name: sqlite
 - name: sqlite-doc
   optional-for: sqlite
