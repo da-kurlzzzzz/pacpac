@@ -297,6 +297,7 @@ packages:
   optional-for: sqlite
 - name: archiso
 - name: devtools
+- name: ansible-core
 
 # crypto go brrr
 - name: electrum-git
