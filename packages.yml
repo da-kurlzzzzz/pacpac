@@ -53,6 +53,7 @@ packages:
 - name: man-db
 - name: man-pages
 - name: texi2html
+- name: time
 
 # my own hardware
 - name: blueberry
@@ -96,6 +97,8 @@ packages:
 - name: ascii
 - name: gucharmap
 - name: speedtest-cli
+- name: translate-shell
+- name: xorg-xev
 
 # ah, yes, i look cool
 - name: cmatrix
@@ -118,6 +121,7 @@ packages:
 - name: cpp-httplib
   aur: true
 - name: uthash
+- name: valgrind
 
 # hate to do it, but
 - name: jdk-openjdk
@@ -218,6 +222,7 @@ packages:
   optional-for: tesseract
 - name: tesseract-data-rus
   optional-for: tesseract
+- name: digikam
 
 # video things
 - name: vlc
