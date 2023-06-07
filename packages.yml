@@ -67,6 +67,7 @@ packages:
   needs-manual-config: add printers and auto configure them
 - name: numlockx
 - name: upower
+- name: nvidia
 
 # non-basic development
 - name: openssh
@@ -153,6 +154,8 @@ packages:
   optional-for: i3-wm
 - name: i3status
   optional-for: i3-wm
+- name: playerctl
+  optional-for: i3-wm
 - name: perl-anyevent-i3
 
 # ah, yes, i dont want to see ??? instead of characters
@@ -177,6 +180,7 @@ packages:
   needs-manual-config: might add config files later
 - name: gnome-themes-extra
 - name: unclutter
+- name: qt5ct
 
 # social stuff
 - name: telegram-desktop
