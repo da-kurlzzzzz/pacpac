@@ -228,17 +228,6 @@ packages:
 - name: mkvtoolnix-cli
 
 # games
-- name: wine
-  needs-manual-config: first run and symlink to drive_c
-- name: wine-mono
-  optional-for: wine
-- name: winetricks
-  optional-for: wine
-- name: steam
-  needs-manual-config: log into account
-- name: heroic-games-launcher-bin
-  aur: true
-  needs-manual-config: log into account
 - name: rogue
 - name: pekka-kana-2
   aur: true
