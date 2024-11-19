@@ -24,30 +24,13 @@ packages:
   aur: true
 - name: expac
 - name: gvim
-- name: vim-ranger
-  optional-for: gvim
-  aur: true
-- name: vim-ansiesc
-  optional-for: gvim
-  aur: true
-- name: vim-sensible
-  optional-for: gvim
-  aur: true
-- name: vim-gnupg
-  optional-for: gvim
-  aur: true
 - name: zsh
-- name: grml-zsh-config
-  optional-for: zsh
 - name: zsh-vi-mode-git
   optional-for: zsh
   aur: true
 - name: pkgfile
   optional-for: zsh
 - name: tmux
-- name: tmux-plugin-manager
-  optional-for: tmux
-  aur: true
   needs-manual-config: prefix+I to install all
 - name: lynx
 - name: man-db
@@ -124,10 +107,6 @@ packages:
 - name: uthash
 - name: valgrind
 
-# hate to do it, but
-- name: jdk-openjdk
-- name: openjdk-doc
-
 # backup stuff
 - name: timeshift
   aur: true
@@ -144,9 +123,6 @@ packages:
 - name: xorg-xinit
 - name: xorg-xinput
 - name: alacritty
-- name: alacritty-themes
-  aur: true
-  optional-for: alacritty
 - name: firefox
   needs-manual-config: log into firefox account and set theme
 - name: i3-wm
@@ -252,7 +228,6 @@ packages:
   aur: true
 - name: czkawka-cli-bin
   aur: true
-- name: gparted
 - name: dosfstools
   optional-for: gparted
 - name: exfatprogs
@@ -282,11 +257,6 @@ packages:
 - name: gtypist
   aur: true
 - name: typespeed
-- name: vtk
-- name: eigen
-  optional-for: vtk
-- name: utf8cpp
-  optional-for: vtk
 - name: cmake
 - name: nmap
 - name: openbsd-netcat
@@ -297,17 +267,12 @@ packages:
   optional-for: sqlite
 - name: archiso
 - name: devtools
-- name: ansible-core
+- name: utf8cpp
 
 # crypto go brrr
 - name: electrum-git
 
 # home server things
-- name: avahi
-  systemctl: avahi-daemon
-- name: ngrok
-  needs-manual-config: log into account
-  aur: true
 - name: nginx-mainline
   needs-manual-config: run make from the odin project to replace config file
 - name: certbot-nginx
