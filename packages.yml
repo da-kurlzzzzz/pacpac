@@ -39,7 +39,7 @@ packages:
 - name: time
 
 # my own hardware
-- name: blueberry
+- name: bluez
   systemctl: bluetooth
 - name: bluez-utils
   needs-manual-config: add devices
@@ -88,7 +88,7 @@ packages:
 - name: cmatrix
 - name: neofetch
 - name: onefetch
-- name: tty-clock-git
+- name: tty-clock
   aur: true
 - name: screenkey
 
@@ -128,7 +128,7 @@ packages:
 - name: i3-wm
 - name: dmenu
   optional-for: i3-wm
-- name: i3status
+- name: i3blocks
   optional-for: i3-wm
 - name: playerctl
   optional-for: i3-wm
@@ -170,7 +170,7 @@ packages:
   needs-manual-config: go through installation
   optional-for: discord
   aur: true
-- name: vk-messenger
+- name: vk-messenger-bin
   needs-manual-config: log into account
   aur: true
 - name: zoom
@@ -270,7 +270,7 @@ packages:
 - name: utf8cpp
 
 # crypto go brrr
-- name: electrum-git
+- name: electrum
 
 # home server things
 - name: nginx-mainline
