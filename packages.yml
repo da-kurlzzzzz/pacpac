@@ -36,6 +36,7 @@ packages:
 - name: man-db
 - name: man-pages
 - name: texi2html
+- name: tldr
 - name: time
 
 # my own hardware
@@ -69,6 +70,7 @@ packages:
 - name: arch-install-scripts
 - name: downgrade
   aur: true
+- name: xdotool
 
 # helps with all that
 - name: ranger
@@ -83,6 +85,7 @@ packages:
 - name: speedtest-cli
 - name: translate-shell
 - name: xorg-xev
+- name: lostfiles
 
 # ah, yes, i look cool
 - name: cmatrix
@@ -206,6 +209,9 @@ packages:
 
 # video things
 - name: vlc
+- name: mpv
+- name: yt-dlp
+  optional-for: mpv
 - name: obs-studio
 - name: openshot
 - name: hypnotix
@@ -213,6 +219,7 @@ packages:
 - name: mkvtoolnix-cli
 
 # games
+- name: steam
 - name: rogue
 - name: pekka-kana-2
   aur: true
@@ -236,6 +243,7 @@ packages:
   optional-for: gparted
 - name: udiskie
 - name: smartmontools
+- name: xfsprogs
 
 # just plain useful
 - name: qalculate-gtk
@@ -262,6 +270,8 @@ packages:
 - name: openbsd-netcat
 - name: task
 - name: pandoc-cli
+- name: python-weasyprint
+  optional-for: pandoc-cli
 - name: sqlite
 - name: sqlite-doc
   optional-for: sqlite
@@ -278,3 +288,16 @@ packages:
 - name: certbot-nginx
   needs-manual-config: add https manually
   optional-for: nginx-mainline
+
+# job things
+- name: apt
+- name: cpio
+- name: fping
+- name: ipcalc
+- name: multipath-tools
+- name: nfs-utils
+- name: picocom
+- name: smbclient
+- name: tcpdump
+- name: tigervnc
+- name: traceroute
