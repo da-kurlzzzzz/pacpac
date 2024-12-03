@@ -145,6 +145,8 @@ packages:
   optional-for: noto-fonts
 - name: noto-fonts-extra
   optional-for: noto-fonts
+- name: ttf-ms-fonts
+  aur: true
 - name: enca
 - name: python-unidecode
 
