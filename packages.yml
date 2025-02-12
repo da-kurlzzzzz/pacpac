@@ -1,305 +1,305 @@
 packages:
 # according to installation guide
-- name: base
-- name: linux
-- name: linux-firmware
-
+  - name: base
+  - name: linux
+  - name: linux-firmware
+  
 # duh
-- name: intel-ucode
-
+  - name: intel-ucode
+  
 # for hardware
-- name: iwd
-  needs-manual-config: wi-fi networks
-  systemctl: iwd
-- name: ntfs-3g
-- name: xf86-video-intel
-- name: alsa-utils
-  needs-manual-config: unmute channels
-
+  - name: iwd
+    needs-manual-config: wi-fi networks
+    systemctl: iwd
+  - name: ntfs-3g
+  - name: xf86-video-intel
+  - name: alsa-utils
+    needs-manual-config: unmute channels
+  
 # basic development
-- name: git
-- name: base-devel # provides sudo texinfo gcc which
-  needs-manual-config: sudoers
-- name: yay
-  aur: true
-- name: expac
-- name: gvim
-- name: zsh
-- name: zsh-vi-mode-git
-  optional-for: zsh
-  aur: true
-- name: pkgfile
-  optional-for: zsh
-- name: tmux
-  needs-manual-config: prefix+I to install all
-- name: lynx
-- name: man-db
-- name: man-pages
-- name: texi2html
-- name: tldr
-- name: time
-
+  - name: git
+  - name: base-devel # provides sudo texinfo gcc which
+    needs-manual-config: sudoers
+  - name: yay
+    aur: true
+  - name: expac
+  - name: gvim
+  - name: zsh
+  - name: zsh-vi-mode-git
+    optional-for: zsh
+    aur: true
+  - name: pkgfile
+    optional-for: zsh
+  - name: tmux
+    needs-manual-config: prefix+I to install all
+  - name: lynx
+  - name: man-db
+  - name: man-pages
+  - name: texi2html
+  - name: tldr
+  - name: time
+  
 # my own hardware
-- name: bluez
-  systemctl: bluetooth
-- name: bluez-utils
-  needs-manual-config: add devices
-  optional-for: blueberry
-- name: cups
-  systemctl: cups
-- name: system-config-printer
-  needs-manual-config: add printers and auto configure them
-- name: numlockx
-- name: upower
-- name: nvidia
-
+  - name: bluez
+    systemctl: bluetooth
+  - name: bluez-utils
+    needs-manual-config: add devices
+    optional-for: blueberry
+  - name: cups
+    systemctl: cups
+  - name: system-config-printer
+    needs-manual-config: add printers and auto configure them
+  - name: numlockx
+  - name: upower
+  - name: nvidia
+  
 # non-basic development
-- name: openssh
-  systemctl: sshd
-- name: python
-- name: python-pip
-  optional-for: python
-- name: logisim
-  aur: true
-- name: gnuplot
-- name: wget
-- name: yq
-- name: pacman-contrib
-- name: reflector
-  systemctl: reflector
-- name: arch-install-scripts
-- name: downgrade
-  aur: true
-- name: xdotool
-
+  - name: openssh
+    systemctl: sshd
+  - name: python
+  - name: python-pip
+    optional-for: python
+  - name: logisim
+    aur: true
+  - name: gnuplot
+  - name: wget
+  - name: yq
+  - name: pacman-contrib
+  - name: reflector
+    systemctl: reflector
+  - name: arch-install-scripts
+  - name: downgrade
+    aur: true
+  - name: xdotool
+  
 # helps with all that
-- name: ranger
-- name: htop
-- name: strace
-  optional-for: htop
-- name: nethogs
-  needs-manual-config: setcap as described in manual
-- name: xclip
-- name: ascii
-- name: gucharmap
-- name: speedtest-cli
-- name: translate-shell
-- name: xorg-xev
-- name: lostfiles
-
+  - name: ranger
+  - name: htop
+  - name: strace
+    optional-for: htop
+  - name: nethogs
+    needs-manual-config: setcap as described in manual
+  - name: xclip
+  - name: ascii
+  - name: gucharmap
+  - name: speedtest-cli
+  - name: translate-shell
+  - name: xorg-xev
+  - name: lostfiles
+  
 # ah, yes, i look cool
-- name: cmatrix
-- name: neofetch
-- name: onefetch
-- name: tty-clock
-  aur: true
-- name: screenkey
-
+  - name: cmatrix
+  - name: neofetch
+  - name: onefetch
+  - name: tty-clock
+    aur: true
+  - name: screenkey
+  
 # specifically for C
-- name: gdb
-- name: ctags
-- name: sdl2
-- name: sdl2_image
-- name: sdl2_gfx
-- name: sdl2_net
-- name: sdl2_mixer
-- name: sdl2_ttf
-- name: nlohmann-json
-- name: cpp-httplib
-  aur: true
-- name: uthash
-- name: valgrind
-
+  - name: gdb
+  - name: ctags
+  - name: sdl2
+  - name: sdl2_image
+  - name: sdl2_gfx
+  - name: sdl2_net
+  - name: sdl2_mixer
+  - name: sdl2_ttf
+  - name: nlohmann-json
+  - name: cpp-httplib
+    aur: true
+  - name: uthash
+  - name: valgrind
+  
 # backup stuff
-- name: timeshift
-  aur: true
-  systemctl: cronie
-  needs-manual-config: go through initial wizard
-- name: syncthing
-  needs-manual-config: too much hassle to backup so init everything manually
-- name: rsync
-- name: rclone
-  needs-manual-config: might add config file later
-
+  - name: timeshift
+    aur: true
+    systemctl: cronie
+    needs-manual-config: go through initial wizard
+  - name: syncthing
+    needs-manual-config: too much hassle to backup so init everything manually
+  - name: rsync
+  - name: rclone
+    needs-manual-config: might add config file later
+  
 # basics for graphics
-- name: xorg-server
-- name: xorg-xinit
-- name: xorg-xinput
-- name: alacritty
-- name: firefox
-  needs-manual-config: log into firefox account and set theme
-- name: i3-wm
-- name: dmenu
-  optional-for: i3-wm
-- name: i3blocks
-  optional-for: i3-wm
-- name: playerctl
-  optional-for: i3-wm
-- name: perl-anyevent-i3
-
+  - name: xorg-server
+  - name: xorg-xinit
+  - name: xorg-xinput
+  - name: alacritty
+  - name: firefox
+    needs-manual-config: log into firefox account and set theme
+  - name: i3-wm
+  - name: dmenu
+    optional-for: i3-wm
+  - name: i3blocks
+    optional-for: i3-wm
+  - name: playerctl
+    optional-for: i3-wm
+  - name: perl-anyevent-i3
+  
 # ah, yes, i dont want to see ??? instead of characters
-- name: noto-fonts
-- name: noto-fonts-cjk
-  optional-for: noto-fonts
-- name: noto-fonts-emoji
-  optional-for: noto-fonts
-- name: noto-fonts-extra
-  optional-for: noto-fonts
-- name: ttf-ms-fonts
-  aur: true
-- name: enca
-- name: python-unidecode
-
+  - name: noto-fonts
+  - name: noto-fonts-cjk
+    optional-for: noto-fonts
+  - name: noto-fonts-emoji
+    optional-for: noto-fonts
+  - name: noto-fonts-extra
+    optional-for: noto-fonts
+  - name: ttf-ms-fonts
+    aur: true
+  - name: enca
+  - name: python-unidecode
+  
 # what would i do without archiving tools
-- name: p7zip
-
+  - name: p7zip
+  
 # i just want to be nice
-- name: pkgstats
-
+  - name: pkgstats
+  
 # customize my ass
-- name: lxappearance
-  needs-manual-config: might add config files later
-- name: gnome-themes-extra
-- name: unclutter
-- name: qt5ct
-
+  - name: lxappearance
+    needs-manual-config: might add config files later
+  - name: gnome-themes-extra
+  - name: unclutter
+  - name: qt5ct
+  
 # social stuff
-- name: telegram-desktop
-  needs-manual-config: log into account
-- name: whatsapp-nativefier
-  needs-manual-config: log into account
-  aur: true
-- name: discord
-  needs-manual-config: log into account
-- name: betterdiscord-installer
-  needs-manual-config: go through installation
-  optional-for: discord
-  aur: true
-- name: vk-messenger-bin
-  needs-manual-config: log into account
-  aur: true
-- name: zoom
-  needs-manual-config: log into account
-  aur: true
-
+  - name: telegram-desktop
+    needs-manual-config: log into account
+  - name: whatsapp-nativefier
+    needs-manual-config: log into account
+    aur: true
+  - name: discord
+    needs-manual-config: log into account
+  - name: betterdiscord-installer
+    needs-manual-config: go through installation
+    optional-for: discord
+    aur: true
+  - name: vk-messenger-bin
+    needs-manual-config: log into account
+    aur: true
+  - name: zoom
+    needs-manual-config: log into account
+    aur: true
+  
 # phone
-- name: scrcpy
-- name: droidcam
-  needs-manual-config: a bit of a hassle, might document it later
-  aur: true
-- name: v4l2loopback-dkms
-  optional-for: droidcam
-- name: linux-headers
-  optional-for: droidcam
-- name: android-tools
-  optional-for: droidcam
-- name: gvfs-mtp
-  optional-for: droidcam
-- name: ifuse
-
+  - name: scrcpy
+  - name: droidcam
+    needs-manual-config: a bit of a hassle, might document it later
+    aur: true
+  - name: v4l2loopback-dkms
+    optional-for: droidcam
+  - name: linux-headers
+    optional-for: droidcam
+  - name: android-tools
+    optional-for: droidcam
+  - name: gvfs-mtp
+    optional-for: droidcam
+  - name: ifuse
+  
 # some programs for images
-- name: feh
-- name: gimp
-- name: imagemagick
-- name: img2pdf
-- name: tesseract
-- name: tesseract-data-eng
-  optional-for: tesseract
-- name: tesseract-data-rus
-  optional-for: tesseract
-- name: digikam
-
+  - name: feh
+  - name: gimp
+  - name: imagemagick
+  - name: img2pdf
+  - name: tesseract
+  - name: tesseract-data-eng
+    optional-for: tesseract
+  - name: tesseract-data-rus
+    optional-for: tesseract
+  - name: digikam
+  
 # video things
-- name: vlc
-- name: mpv
-- name: yt-dlp
-  optional-for: mpv
-- name: obs-studio
-- name: openshot
-- name: hypnotix
-  aur: true
-- name: mkvtoolnix-cli
-
+  - name: vlc
+  - name: mpv
+  - name: yt-dlp
+    optional-for: mpv
+  - name: obs-studio
+  - name: openshot
+  - name: hypnotix
+    aur: true
+  - name: mkvtoolnix-cli
+  
 # games
-- name: steam
-- name: rogue
-- name: pekka-kana-2
-  aur: true
-
+  - name: steam
+  - name: rogue
+  - name: pekka-kana-2
+    aur: true
+  
 # documents
-- name: libreoffice-still
-- name: xreader
-- name: djvulibre
-  optional-for: xreader
-
+  - name: libreoffice-still
+  - name: xreader
+  - name: djvulibre
+    optional-for: xreader
+  
 # all for disks
-- name: ventoy-bin
-  aur: true
-- name: czkawka-cli-bin
-  aur: true
-- name: dosfstools
-  optional-for: gparted
-- name: exfatprogs
-  optional-for: gparted
-- name: mtools
-  optional-for: gparted
-- name: udiskie
-- name: smartmontools
-- name: xfsprogs
-
+  - name: ventoy-bin
+    aur: true
+  - name: czkawka-cli-bin
+    aur: true
+  - name: dosfstools
+    optional-for: gparted
+  - name: exfatprogs
+    optional-for: gparted
+  - name: mtools
+    optional-for: gparted
+  - name: udiskie
+  - name: smartmontools
+  - name: xfsprogs
+  
 # just plain useful
-- name: qalculate-gtk
-  needs-manual-config: might add config file later
-- name: virtualbox
-  needs-manual-config: create boxes
-- name: transmission-cli
-  systemctl: transmission
-- name: tor
-  systemctl: tor
-- name: torsocks
-  optional-for: tor
-- name: torbrowser-launcher
-  optional-for: tor
-- name: dragon-drop
-  aur: true
-
+  - name: qalculate-gtk
+    needs-manual-config: might add config file later
+  - name: virtualbox
+    needs-manual-config: create boxes
+  - name: transmission-cli
+    systemctl: transmission
+  - name: tor
+    systemctl: tor
+  - name: torsocks
+    optional-for: tor
+  - name: torbrowser-launcher
+    optional-for: tor
+  - name: dragon-drop
+    aur: true
+  
 # i'll study those for now
-- name: gtypist
-  aur: true
-- name: typespeed
-- name: cmake
-- name: nmap
-- name: openbsd-netcat
-- name: task
-- name: pandoc-cli
-- name: python-weasyprint
-  optional-for: pandoc-cli
-- name: sqlite
-- name: sqlite-doc
-  optional-for: sqlite
-- name: archiso
-- name: devtools
-- name: utf8cpp
-
+  - name: gtypist
+    aur: true
+  - name: typespeed
+  - name: cmake
+  - name: nmap
+  - name: openbsd-netcat
+  - name: task
+  - name: pandoc-cli
+  - name: python-weasyprint
+    optional-for: pandoc-cli
+  - name: sqlite
+  - name: sqlite-doc
+    optional-for: sqlite
+  - name: archiso
+  - name: devtools
+  - name: utf8cpp
+  
 # crypto go brrr
-- name: electrum
-
+  - name: electrum
+  
 # home server things
-- name: nginx-mainline
-  needs-manual-config: run make from the odin project to replace config file
-- name: certbot-nginx
-  needs-manual-config: add https manually
-  optional-for: nginx-mainline
-
+  - name: nginx-mainline
+    needs-manual-config: run make from the odin project to replace config file
+  - name: certbot-nginx
+    needs-manual-config: add https manually
+    optional-for: nginx-mainline
+  
 # job things
-- name: apt
-- name: cpio
-- name: fping
-- name: ipcalc
-- name: multipath-tools
-- name: nfs-utils
-- name: picocom
-- name: smbclient
-- name: tcpdump
-- name: tigervnc
-- name: traceroute
+  - name: apt
+  - name: cpio
+  - name: fping
+  - name: ipcalc
+  - name: multipath-tools
+  - name: nfs-utils
+  - name: picocom
+  - name: smbclient
+  - name: tcpdump
+  - name: tigervnc
+  - name: traceroute
