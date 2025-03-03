@@ -7,6 +7,7 @@
 PACMAN="yay"  # Package manager to use
 PKGFILE_DEFAULT="$(dirname "$(realpath "$0")")/packages.yml"  # Default YAML file
 AUTO_COMMENT="added automatically"  # Comment for auto-added packages
+HOSTNAME=$(hostname)  # Current machine's hostname
 
 # Colors for human-readable output
 GREEN="\033[1;32m"
@@ -27,7 +28,8 @@ print_usage() {
 
 get_package_list() {
     local pkgfile="$1"
-    yq -r '.packages[].name' "$pkgfile"
+    # Extract package names, filtering by hostname if machines field exists
+    yq -r ".packages[] | select(.machines == null or (.[\"machines\"] | index(\"$HOSTNAME\"))) | .name" "$pkgfile"
 }
 
 get_group_list() {

@@ -52,6 +52,9 @@ packages:
   - name: numlockx
   - name: upower
   - name: nvidia
+    machines:
+      - chimera
+      - soldier
   
 # non-basic development
   - name: openssh
