@@ -7,7 +7,7 @@
 PACMAN="yay"  # Package manager to use
 PKGFILE_DEFAULT="$(dirname "$(realpath "$0")")/packages.yml"  # Default YAML file
 AUTO_COMMENT="added automatically"  # Comment for auto-added packages
-HOSTNAME=$(hostname)  # Current machine's hostname
+HOSTNAME=$(cat /etc/hostname)  # Current machine's hostname
 
 # Colors for human-readable output
 GREEN="\033[1;32m"
