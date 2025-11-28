@@ -1,0 +1,468 @@
+pacpac_packages:
+# Base System & Hardware
+  - name: base
+  - name: linux
+    machines:
+      - knight
+      - chimera
+      - molerat
+      - soldier
+    exclude-machines:
+      - halfling
+  - name: linux-firmware
+    machines:
+      - knight
+      - chimera
+      - molerat
+      - soldier
+    exclude-machines:
+      - halfling
+  - name: intel-ucode
+    machines:
+      - halfling
+      - knight
+      - chimera
+      - molerat
+      - soldier
+  - name: mesa
+    machines:
+      - halfling
+      - knight
+  - name: nvidia
+    machines:
+      - soldier
+  - name: nvidia-open
+    machines:
+      - chimera
+  - name: alsa-utils
+    needs-manual-config: unmute channels
+  - name: bluez
+    systemctl: bluetooth
+  - name: bluez-utils
+    needs-manual-config: add devices
+    optional-for: blueberry
+  - name: cups
+    systemctl: cups
+  - name: system-config-printer
+    needs-manual-config: add printers and auto configure them
+  - name: numlockx
+  - name: upower
+  - name: iwd
+    needs-manual-config: wi-fi networks
+    systemctl: iwd
+
+# Desktop Environment & UI
+  - name: xorg-server
+  - name: xorg-xinit
+  - name: xorg-xinput
+  - name: xorg-xev
+  - name: i3-wm
+  - name: dmenu
+    optional-for: i3-wm
+  - name: i3blocks
+    optional-for: i3-wm
+  - name: playerctl
+    optional-for: i3-wm
+  - name: perl-anyevent-i3
+  - name: i3lock
+    optional-for: i3-wm
+  - name: xss-lock
+    optional-for: i3-wm
+  - name: alacritty
+  - name: lxappearance
+    needs-manual-config: might add config files later
+  - name: gnome-themes-extra
+  - name: unclutter
+  - name: qt5ct
+  - name: dragon-drop
+    aur: true
+
+# Fonts & Language Support
+  - name: noto-fonts
+  - name: noto-fonts-cjk
+    optional-for: noto-fonts
+  - name: noto-fonts-emoji
+    optional-for: noto-fonts
+  - name: noto-fonts-extra
+    optional-for: noto-fonts
+  - name: ttf-ms-fonts
+    aur: true
+  - name: enca
+  - name: python-unidecode
+
+# Development Tools
+  - name: base-devel
+    needs-manual-config: sudoers
+  - name: git
+  - name: gvim
+  - name: python
+  - name: python-pip
+    optional-for: python
+  - name: cmake
+  - name: yay
+    aur: true
+  - name: expac
+  - name: ctags
+  - name: logisim
+    aur: true
+  - name: gnuplot
+  - name: devtools
+  - name: arch-install-scripts
+  - name: archiso
+
+# C/C++ Development
+  - name: gdb
+  - name: sdl2
+  - name: sdl2_image
+  - name: sdl2_gfx
+  - name: sdl2_net
+  - name: sdl2_mixer
+  - name: sdl2_ttf
+  - name: nlohmann-json
+  - name: cpp-httplib
+    aur: true
+  - name: uthash
+  - name: valgrind
+  - name: utf8cpp
+
+# System Utilities
+  - name: htop
+  - name: strace
+    optional-for: htop
+  - name: nethogs
+    needs-manual-config: setcap as described in manual
+  - name: ranger
+  - name: xclip
+  - name: ascii
+  - name: gucharmap
+  - name: man-db
+  - name: man-pages
+  - name: texi2html
+  - name: tldr
+  - name: time
+  - name: wget
+  - name: yq
+  - name: pacman-contrib
+  - name: reflector
+    systemctl: reflector
+  - name: downgrade
+    aur: true
+  - name: xdotool
+  - name: lostfiles
+
+# Shell & Terminal
+  - name: zsh
+  - name: zsh-vi-mode-git
+    optional-for: zsh
+    aur: true
+  - name: pkgfile
+    optional-for: zsh
+  - name: tmux
+    needs-manual-config: prefix+I to install all
+  - name: lynx
+
+# Terminal Eye Candy
+  - name: cmatrix
+  - name: neofetch
+  - name: onefetch
+  - name: tty-clock
+    aur: true
+  - name: screenkey
+
+# Media & Graphics
+  - name: feh
+  - name: gimp
+  - name: imagemagick
+  - name: img2pdf
+  - name: tesseract
+  - name: tesseract-data-eng
+    optional-for: tesseract
+  - name: tesseract-data-rus
+    optional-for: tesseract
+  - name: digikam
+  - name: vlc
+  - name: mpv
+  - name: yt-dlp
+    optional-for: mpv
+  - name: obs-studio
+  - name: openshot
+    aur: true
+  - name: hypnotix
+    aur: true
+  - name: mkvtoolnix-cli
+
+# Internet & Communication
+  - name: firefox
+    needs-manual-config: log into firefox account and set theme
+  - name: telegram-desktop
+    needs-manual-config: log into account
+  - name: whatsapp-nativefier
+    needs-manual-config: log into account
+    aur: true
+  - name: discord
+    needs-manual-config: log into account
+  - name: betterdiscord-installer
+    needs-manual-config: go through installation
+    optional-for: discord
+    aur: true
+  - name: vk-messenger-bin
+    needs-manual-config: log into account
+    aur: true
+  - name: zoom
+    needs-manual-config: log into account
+    aur: true
+
+# Security & Privacy
+  - name: tor
+    systemctl: tor
+  - name: torsocks
+    optional-for: tor
+  - name: torbrowser-launcher
+  - name: openssh
+    systemctl: sshd
+
+# Document & Office
+  - name: libreoffice-still
+  - name: xreader
+  - name: djvulibre
+    optional-for: xreader
+  - name: pandoc-cli
+  - name: python-weasyprint
+    optional-for: pandoc-cli
+  - name: translate-shell
+
+# Storage & Backup
+  - name: timeshift
+    aur: true
+    systemctl: cronie
+    needs-manual-config: go through initial wizard
+  - name: syncthing
+    needs-manual-config: too much hassle to backup so init everything manually
+  - name: rsync
+  - name: rclone
+    needs-manual-config: might add config file later
+  - name: p7zip
+  - name: ntfs-3g
+  - name: ventoy-bin
+    aur: true
+  - name: czkawka-cli-bin
+    aur: true
+  - name: dosfstools
+    optional-for: gparted
+  - name: exfatprogs
+    optional-for: gparted
+  - name: mtools
+    optional-for: gparted
+  - name: udiskie
+  - name: smartmontools
+  - name: xfsprogs
+
+# Mobile & Device Support
+  - name: scrcpy
+  - name: droidcam
+    needs-manual-config: a bit of a hassle, might document it later
+    aur: true
+  - name: v4l2loopback-dkms
+    optional-for: droidcam
+  - name: linux-headers
+    machines:
+      - knight
+      - chimera
+      - molerat
+      - soldier
+    exclude-machines:
+      - halfling
+    optional-for: droidcam
+  - name: android-tools
+    optional-for: droidcam
+  - name: gvfs-mtp
+    optional-for: droidcam
+  - name: ifuse
+
+# Entertainment & Games
+  - name: steam
+    machines:
+      - chimera
+  - name: rogue
+  - name: pekka-kana-2
+    aur: true
+  - name: gtypist
+    aur: true
+  - name: typespeed
+
+# Server & Network Tools
+  - name: nginx-mainline
+    needs-manual-config: run make from the odin project to replace config file
+  - name: certbot-nginx
+    needs-manual-config: add https manually
+    optional-for: nginx-mainline
+  - name: nmap
+  - name: openbsd-netcat
+  - name: transmission-cli
+    systemctl: transmission
+
+# Professional Tools
+  - name: virtualbox
+    needs-manual-config: create boxes
+  - name: qalculate-gtk
+    needs-manual-config: might add config file later
+  - name: task
+  - name: sqlite
+  - name: sqlite-doc
+    optional-for: sqlite
+
+# Job-specific Tools
+  - name: apt
+  - name: cpio
+  - name: fping
+  - name: ipcalc
+  - name: multipath-tools
+  - name: nfs-utils
+  - name: picocom
+  - name: smbclient
+  - name: tcpdump
+  - name: tigervnc
+  - name: traceroute
+
+# Cryptocurrency
+  - name: electrum
+
+# System Statistics
+  - name: pkgstats
+  - name: speedtest-cli
+# BEGIN AUTOGENERATED PACKAGES BY PACPAC (do not remove this line)
+# === Automatically added by pacpac on 2025-11-28T12:54:28Z ===
+  - name: chromium
+  - name: wondershaper-git
+  - name: expect
+  - name: zsh-completions
+  - name: sdl2-compat
+  - name: nuttcp
+  - name: qt6ct
+  - name: gnuclad
+  - name: npm
+  - name: unzip
+  - name: lcov
+  - name: wireplumber
+  - name: blueman
+  - name: ollama
+  - name: grub
+  - name: shc
+  - name: xdg-utils-handlr
+  - name: whois
+  - name: remmina-plugin-rdesktop
+  - name: linux-firmware
+  - name: clion
+  - name: arp-scan
+  - name: lshw
+  - name: vlc-plugins-all
+  - name: pv
+  - name: rp-pppoe
+  - name: mariadb
+  - name: xdg-desktop-portal-gtk
+  - name: sfml
+  - name: qemu-desktop
+  - name: dh-autoreconf
+  - name: tmux-resurrect
+  - name: virtualbox-host-modules-lts
+  - name: code
+  - name: ifmetric
+  - name: intel-media-driver
+  - name: net-tools
+  - name: beep
+  - name: dwarffortress
+  - name: pinfo
+  - name: gtk-theme-material-black
+  - name: trivy
+  - name: obsidian
+  - name: debootstrap
+  - name: easy-switcher
+  - name: bash-completion
+  - name: copyq
+  - name: xorg-xwininfo
+  - name: iperf
+  - name: wmctrl
+  - name: bind
+  - name: upx
+  - name: linux-lts
+  - name: lsof
+  - name: i3-resurrect
+  - name: perf
+  - name: emmet-vim-git
+  - name: wireshark-qt
+  - name: stress
+  - name: rpm-tools
+  - name: binwalk
+  - name: ansible
+  - name: ppp
+  - name: dmidecode
+  - name: docker
+  - name: tree
+  - name: debhelper
+  - name: icinga2
+  - name: moonlight-qt
+  - name: qemu-base
+  - name: openvpn-hidemyname
+  - name: meson
+  - name: rtkit
+  - name: xorg-xset
+  - name: clion-gdb
+  - name: hdparm
+  - name: vulkan-intel
+  - name: pacutils
+  - name: cjson
+  - name: freerdp
+  - name: rofi
+  - name: netsniff-ng
+  - name: podman
+  - name: dropbear
+  - name: postgresql
+  - name: libqmi
+  - name: wine-mono
+  - name: f2fs-tools
+  - name: graphviz
+  - name: extramaus
+  - name: 7zip
+  - name: kbdd-git
+  - name: equivs-git
+  - name: pycharm-community-edition
+  - name: wine
+  - name: devscripts
+  - name: nrpe
+  - name: usbutils
+  - name: iperf3
+  - name: postgresql-old-upgrade
+  - name: monitoring-plugins
+  - name: gcovr
+  - name: remmina
+  - name: vim-mesonic-git
+  - name: diffuse
+  - name: inetutils
+  - name: clion-cmake
+  - name: sshpass
+  - name: include-what-you-use
+  - name: shellcheck
+  - name: linux-lts-headers
+  - name: docker-compose
+  - name: pipewire
+  - name: yaru-colors-gtk-theme
+  - name: handlr-regex
+  - name: ddd
+  - name: anydesk-bin
+  - name: cloudflared
+  - name: debian-archive-keyring
+  - name: lighttpd
+  - name: pipewire-pulse
+  - name: i2util
+  - name: ethtool
+  - name: sshuttle
+  - name: brightnessctl
+  - name: lxc
+  - name: clion-lldb
+  - name: clipboard
+  - name: php
+  - name: syslinux
+  - name: logrotate
+  - name: autorandr
+  - name: termshark
+# END AUTOGENERATED PACKAGES BY PACPAC (do not remove this line)
