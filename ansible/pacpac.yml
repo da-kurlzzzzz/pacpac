@@ -3,13 +3,6 @@
   hosts: localhost
 
   tasks:
-    - name: full system upgrade
-      tags: syu
-      become: true
-      community.general.pacman:
-        update_cache: true
-        upgrade: true
-
     - name: Filter packages that apply to this host
       ansible.builtin.set_fact:
         applicable_packages: >-
@@ -27,15 +20,15 @@
              map(attribute='name') | list }}
 
     - name: install packages
-      tags: pacman
       become: true
+      tags: install
       community.general.pacman:
         name: "{{ non_aur_packages }}"
         state: present
 
     - name: make packages explicit
-      tags: pacman
       become: true
+      tags: install
       community.general.pacman:
         name: "{{ non_aur_packages }}"
         reason: explicit
