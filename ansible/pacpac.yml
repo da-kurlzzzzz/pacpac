@@ -1,6 +1,6 @@
 ---
-- name: All hosts up-to-date
-  hosts: all
+- name: Manage packages
+  hosts: localhost
 
   tasks:
     - name: full system upgrade
@@ -48,7 +48,7 @@
 
     - name: Identify extra packages (installed but not in pacpac_packages for this host)
       ansible.builtin.set_fact:
-        extra_packages: >
+        extra_packages: >-
           {{ explicitly_installed.stdout_lines |
              difference(applicable_packages | map(attribute='name') | list) }}
 
