@@ -5,7 +5,7 @@
 
 # Configuration
 PACMAN="yay"  # Package manager to use
-PKGFILE_DEFAULT="$(dirname "$(realpath "$0")")/packages.yml"  # Default YAML file
+PKGFILE_DEFAULT="$(dirname "$(realpath "$0")")/all.yml"  # Default YAML file
 AUTO_COMMENT="added automatically"  # Comment for auto-added packages
 HOSTNAME=$(cat /etc/hostname)  # Current machine's hostname
 
@@ -29,12 +29,12 @@ print_usage() {
 get_package_list() {
     local pkgfile="$1"
     # Extract package names, filtering by hostname if machines field exists
-    yq -r ".packages[] | select(.machines == null or (.[\"machines\"] | index(\"$HOSTNAME\"))) | .name" "$pkgfile"
+    yq -r ".pacpac_packages[] | select(.machines == null or (.[\"machines\"] | index(\"$HOSTNAME\"))) | .name" "$pkgfile"
 }
 
 get_group_list() {
     local pkgfile="$1"
-    yq -r '.packages[] | select(has("group")).name' "$pkgfile"
+    yq -r '.pacpac_packages[] | select(has("group")).name' "$pkgfile"
 }
 
 get_installed_packages() {
@@ -66,7 +66,7 @@ add_packages_to_yml() {
     local packages_to_add="$2"
     local tmp_pkgfile="$pkgfile.tmp"
     cp "$pkgfile" "$tmp_pkgfile"
-    local yq_command=".packages += ["
+    local yq_command=".pacpac_packages += ["
     for pkg in $packages_to_add; do
         yq_command="$yq_command{\"name\": \"$pkg\", \"comment\": \"$AUTO_COMMENT\"},"
     done
@@ -106,8 +106,8 @@ interactive_mode() {
 
 # Main script logic
 main() {
-    local print_unsaved=false
-    local print_uninstalled=false
+    local print_unsaved=true
+    local print_uninstalled=true
     local add_packages=false
     local interactive=false
     local output_format="human"
