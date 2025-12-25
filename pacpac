@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PKGFILE="all.yml"  # Adjust path if needed
+PKGFILE="ansible/group_vars/all.yml"  # Adjust path if needed
 HOSTNAME=$(hostname)
 PACMAN="pacman"    # Or yay if preferred
 ANSIBLE_PLAYBOOK="ansible-playbook pacpac.yml"
