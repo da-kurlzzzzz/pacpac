@@ -6,10 +6,10 @@ PACMAN="pacman"    # Or yay if preferred
 ANSIBLE_PLAYBOOK="ansible/pacpac.yml"
 
 # Colors for human-readable output
-RED="\033[1;31m"
-GREEN="\033[1;32m"
-YELLOW="\033[1;33m"
-NC="\033[0m"  # No Color
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'  # No Color
 
 get_saved_packages() {
   yq -r ".pacpac_packages[] | select(.machines == null or (.machines | index(\"$HOSTNAME\"))) | .name" "$PKGFILE"
@@ -68,7 +68,8 @@ ask() {
     local prompt="$1"
     local response
     while true; do
-        read -p "${GREEN}$prompt ${YELLOW}[Y/n]${NC}: " response
+        echo -e "${GREEN}$prompt ${YELLOW}[Y/n]${NC}: "
+        read response
         case "$response" in
             ""|[Yy]*) return 0 ;;
             [Nn]*) return 1 ;;
@@ -80,13 +81,13 @@ ask() {
 interactive_menu() {
     echo -e "${GREEN}Let me help you with pacman package management${NC}"
     show_diff
-    ask "Install missing packages? [Y/n]" && run_playbook --skip-tags asdeps
+    ask "Install missing packages?" && run_playbook --skip-tags asdeps
     show_diff
-    ask "Add extra packages to package list? [Y/n]" && add_extras_to_yml "$(comm -23 <(sort <<< "$(get_installed_packages)") <(sort <<< "$(get_saved_packages)"))"
+    ask "Add extra packages to package list?" && add_extras_to_yml "$(comm -23 <(sort <<< "$(get_installed_packages)") <(sort <<< "$(get_saved_packages)"))"
     show_diff
-    ask "Prepare extra packages for removal? [Y/n]" && run_playbook --skip-tags install
+    ask "Prepare extra packages for removal?" && run_playbook --skip-tags install
     show_diff
-    ask "Remove orphans? [Y/n]" && remove_orphans
+    ask "Remove orphans?" && remove_orphans
 }
 
 interactive_menu
