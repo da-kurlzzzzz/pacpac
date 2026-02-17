@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-PKGFILE="ansible/group_vars/all.yml"  # Adjust path if needed
+[ "$UID" = 0 ] && { echo Do not run me as root; exit 1; }
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
+if [[ "$SCRIPT_DIR" =~ "^/usr/" ]]; then
+    cd /usr/lib/pacpac
+else
+    cd "$SCRIPT_DIR"
+fi
+
+PKGFILE="${XDG_CONFIG_HOME:-$HOME/.config}/pacpac/packages.yml"
+[ -f "$PKGFILE" ] || PKGFILE="group_vars/all.yml"
 HOSTNAME=$(hostname)
 PACMAN="pacman"
 ANSIBLE_PLAYBOOK="pacpac.yml"
@@ -60,7 +70,7 @@ remove_orphans() {
 
 run_playbook() {
     pushd "$(dirname "$ANSIBLE_PLAYBOOK")"
-    ansible-playbook --ask-become-pass "$(basename "$ANSIBLE_PLAYBOOK")" "$@"
+    sudo ansible-playbook -e "@$PKGFILE" "$(basename "$ANSIBLE_PLAYBOOK")" "$@"
     popd
 }
 
