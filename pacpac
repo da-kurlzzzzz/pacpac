@@ -76,9 +76,7 @@ remove_orphans()
 
 run_playbook()
 {
-    pushd "$(dirname "$ANSIBLE_PLAYBOOK")"
-    sudo ansible-playbook -e "@$PKGFILE" "$(basename "$ANSIBLE_PLAYBOOK")" "$@"
-    popd
+    sudo ansible-playbook -e "@$PKGFILE" "$ANSIBLE_PLAYBOOK" "$@"
 }
 
 ask()
