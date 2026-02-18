@@ -8,7 +8,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
 if [[ "$SCRIPT_DIR" =~ "^/usr/" ]]; then
-    cd /usr/lib/pacpac
+    cd /usr/share/pacpac
 else
     cd "$SCRIPT_DIR"
 fi
