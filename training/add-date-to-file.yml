@@ -1,0 +1,22 @@
+---
+- hosts: myself
+  gather_facts: false
+  vars_prompt:
+    - name: comment
+      prompt: "enter comment:\n"
+      private: false
+  vars:
+    date_time: "{{ now(fmt='%Y-%m-%dT%H:%M') }}"
+    padded_comment: "{{ ' ' + comment if comment else '' }}"
+    date_time_comment: "{{ date_time + padded_comment }}"
+  tasks:
+    - name: Append current datetime to file
+      diff: true
+      lineinfile:
+        path: /tmp/datetime.log
+        line: "{{ date_time_comment }}"
+        insertafter: EOF
+        create: yes
+    - name: Print some loaded vars
+      debug:
+        msg: "var from file: {{ var_from_file }}"
