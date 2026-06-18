@@ -1,0 +1,3 @@
+date_time: "{{ now(fmt='%Y-%m-%dT%H:%M') }}"
+padded_comment: "{{ ' ' + comment if comment else '' }}"
+date_time_comment: "{{ date_time + padded_comment }}"
