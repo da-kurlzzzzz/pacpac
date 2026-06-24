@@ -1,0 +1,6 @@
+- name: Save some vars to file
+  vars:
+    my_variables:
+  template:
+    src: new-vars.yml.j2
+    dest: "{{ playbook_dir }}/group_vars/delete.yml"

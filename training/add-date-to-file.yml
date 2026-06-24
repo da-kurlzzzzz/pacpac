@@ -1,21 +1,20 @@
+#!/usr/bin/env ansible-playbook
 ---
 - hosts: myself
   gather_facts: false
   vars_prompt:
     - name: comment
-      prompt: "enter comment:\n"
+      prompt: "enter comment"
       private: false
-  post_tasks:
-    - set_fact:
-        comment: "{{ comment }}"
-    - set_fact:
-        date_time_comment: "{{ date_time_comment }}"
   roles:
     - dummy
+    - saver
 
 - hosts: myself
   gather_facts: false
   tasks:
-    - name: Print some loaded vars
+    - name: Print set facts
       debug:
-        msg: "{{ date_time_comment }}"
+        msg: |
+          {{ date_time_comment }}
+          {{ comment }}
