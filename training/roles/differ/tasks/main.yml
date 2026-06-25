@@ -15,10 +15,5 @@
   set_fact:
     missing_packages: "{{ non_aur_packages | difference(explicit_packages) }}"
 
-- name: Pretty print differences
-  debug:
-    msg: |
-      Missing packages:
-      {{ missing_packages | to_nice_yaml }}
-      Extra packages:
-      {{ extra_packages | to_nice_yaml }}
+- name: Show diff
+  import_tasks: show-diff.yml
