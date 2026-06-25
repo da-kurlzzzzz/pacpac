@@ -1,0 +1,24 @@
+- name: Get list of explicitly installed packages
+  command: pacman -Qqe
+  changed_when: false
+  register: explicitly_installed
+
+- name: Save list of explicitly installed packages
+  set_fact:
+    explicit_packages: "{{ explicitly_installed.stdout_lines | list }}"
+
+- name: Identify extra packages (installed but not in pacpac_packages for this host)
+  set_fact:
+    extra_packages: "{{ explicit_packages | difference(non_aur_packages) }}"
+
+- name: Identify missing packages (in pacpac_packages for this host but not installed)
+  set_fact:
+    missing_packages: "{{ non_aur_packages | difference(explicit_packages) }}"
+
+- name: Pretty print differences
+  debug:
+    msg: |
+      Missing packages:
+      {{ missing_packages | to_nice_yaml }}
+      Extra packages:
+      {{ extra_packages | to_nice_yaml }}

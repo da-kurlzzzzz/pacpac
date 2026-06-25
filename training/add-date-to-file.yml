@@ -1,20 +1,22 @@
 #!/usr/bin/env ansible-playbook
 ---
 - hosts: myself
-  gather_facts: false
-  vars_prompt:
-    - name: comment
-      prompt: "enter comment"
-      private: false
+  #gather_facts: false
+  #vars_prompt:
+  #  - name: comment
+  #    prompt: "enter comment"
+  #    private: false
+  vars:
+    ansible_callback_diy_runner_on_ok_msg: >-
+      {{ ansible_callback_diy.result.output.msg | default("") }}
+    ansible_callback_diy_playbook_on_start_msg: ""
+    ansible_callback_diy_playbook_on_play_start_msg: ""
+    ansible_callback_diy_playbook_on_task_start_msg: ""
+    ansible_callback_diy_playbook_on_stats_msg: ""
+    #ansible_callback_diy_on_any_msg: >-
+    #  {% for k, v in ansible_callback_diy.items() %}
+    #    {{ k }}
+    #  {% endfor %}
+    #  {{ ansible_callback_diy.playbook }}
   roles:
-    - dummy
-    - saver
-
-- hosts: myself
-  gather_facts: false
-  tasks:
-    - name: Print set facts
-      debug:
-        msg: |
-          {{ date_time_comment }}
-          {{ comment }}
+    - differ
