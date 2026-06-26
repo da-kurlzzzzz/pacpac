@@ -1,5 +1,5 @@
 - name: Get list of explicitly installed packages
-  command: pacman -Qqe
+  command: pacman -Qqen
   changed_when: false
   register: explicitly_installed
 
@@ -15,5 +15,14 @@
   set_fact:
     missing_packages: "{{ non_aur_packages | difference(explicit_packages) }}"
 
-- name: Show diff
+- name: Show extras
   import_tasks: show-diff.yml
+  vars:
+    packages_to_print: "{{ extra_packages }}"
+    title: "Extra packages:"
+
+- name: Show missing
+  import_tasks: show-diff.yml
+  vars:
+    packages_to_print: "{{ missing_packages }}"
+    title: "Missing packages:"

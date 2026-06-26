@@ -1,3 +1,12 @@
+#- name: Prompt for the comment
+#  pause:
+#    prompt: enter comment
+#  register: comment
+
+- name: Expose comment to other plays
+  set_fact:
+    comment: "{{ comment.user_input | default('') }}"
+
 - name: Append current datetime to file
   diff: true
   lineinfile:
@@ -5,12 +14,9 @@
     line: "{{ date_time_comment }}"
     insertafter: EOF
     create: yes
+
 - name: Print some loaded vars
   debug:
     msg: |
       var from file: {{ var_from_file }}
       var from input: {{ comment }}
-- name: Make variable available to other plays
-  set_fact:
-    date_time_comment: "{{ date_time_comment }}"
-    comment: "{{ comment }}"

@@ -1,4 +1,5 @@
-fleet_packages: "{{ pacpac_packages | selectattr('machines', 'undefined') }}"
-machine_packages: "{{ pacpac_packages | selectattr('machines', 'defined') | selectattr('machines', 'search', ansible_facts['hostname']) }}"
+pacpac_packages_all: "{{ pacpac_packages + pacpac_packages_extra | default([]) }}"
+fleet_packages: "{{ pacpac_packages_all | selectattr('machines', 'undefined') }}"
+machine_packages: "{{ pacpac_packages_all | selectattr('machines', 'defined') | selectattr('machines', 'search', ansible_facts['hostname']) }}"
 applicable_packages: "{{ fleet_packages + machine_packages }}"
 non_aur_packages: "{{ applicable_packages | rejectattr('aur', 'defined') | map(attribute='name') }}"

@@ -1,0 +1,20 @@
+- name: Get list of orphans
+  command: pacman -Qqdt
+  changed_when: false
+  register: orphans
+
+- name: Save list of orphan packages
+  set_fact:
+    orphan_packages: "{{ orphans.stdout_lines | list }}"
+
+- name: Ask user to reap
+  pause:
+    prompt: Reap orphan packages? [y/N]
+  register: ans
+
+- name: Reap orphans
+  community.general.pacman:
+    name: "{{ orphan_packages }}"
+    state: absent
+    extra_args: --recursive
+  when: ans.user_input | length > 0 and ans.user_input | lower | first == 'y'

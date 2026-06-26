@@ -3,12 +3,8 @@
     cols: 3
   debug:
     msg: |
-      Missing packages:
-      {% for row in extra_packages | sort | batch(cols) %}
-      {% for col in row %} {{ "%-20s" | format(col | default('')) }} {% endfor %}
+      {{ title }}
+      {% for row in packages_to_print | sort | batch(cols) %}
+      {% for col in row %}  {{ "%-25s" | format(col | default('')) }}{% endfor %}
 
       {% endfor %}
-
-      Extra packages:
-
-#{{ extra_packages | to_nice_yaml }}
