@@ -16,13 +16,15 @@
     missing_packages: "{{ non_aur_packages | difference(explicit_packages) }}"
 
 - name: Show extras
-  import_tasks: show-diff.yml
+  import_role:
+    name: printer
   vars:
     packages_to_print: "{{ extra_packages }}"
     title: "Extra packages:"
 
 - name: Show missing
-  import_tasks: show-diff.yml
+  import_role:
+    name: printer
   vars:
     packages_to_print: "{{ missing_packages }}"
     title: "Missing packages:"

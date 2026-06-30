@@ -1,5 +1,25 @@
 ansible_callback_diy_runner_on_ok_msg: >-
   {{ ansible_callback_diy.result.output.msg | default("") }}
+ansible_callback_diy_runner_on_skipped_msg: ""
+
+ansible_callback_diy_playbook_on_pause_msg: ""
+ansible_callback_diy_on_file_diff_msg: ""
+ansible_callback_diy_playbook_on_handler_task_start_msg: ""
+ansible_callback_diy_playbook_on_include_msg: ""
+ansible_callback_diy_playbook_on_no_hosts_matched_msg: ""
+ansible_callback_diy_playbook_on_no_hosts_remaining_msg: ""
+ansible_callback_diy_playbook_on_notify_msg: ""
+ansible_callback_diy_playbook_on_setup_msg: ""
+ansible_callback_diy_playbook_on_vars_prompt_msg: ""
+ansible_callback_diy_runner_item_on_failed_msg: ""
+ansible_callback_diy_runner_item_on_ok_msg: ""
+ansible_callback_diy_runner_item_on_skipped_msg: ""
+ansible_callback_diy_runner_on_failed_msg: ""
+ansible_callback_diy_runner_on_no_hosts_msg: ""
+ansible_callback_diy_runner_on_unreachable_msg: ""
+ansible_callback_diy_runner_retry_msg: ""
+
+ansible_callback_diy_runner_on_start_msg: ""
 ansible_callback_diy_playbook_on_start_msg: ""
 ansible_callback_diy_playbook_on_play_start_msg: ""
 ansible_callback_diy_playbook_on_task_start_msg: ""
